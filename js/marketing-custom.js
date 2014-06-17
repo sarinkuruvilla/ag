@@ -318,37 +318,37 @@ if( $browserWidth >= 992 ) {
     });
 
 }
-    if (!isTouch) {
-        // PixelWatcher must be initialized with a video or canvas object
-        var videoObj = BV.getPlayer().tag;
-        var pixelWatcher = undefined;
+ //    if (!isTouch) {
+ //        // PixelWatcher must be initialized with a video or canvas object
+ //        var videoObj = BV.getPlayer().tag;
+ //        var pixelWatcher = undefined;
 
-        videoObj.addEventListener("loadeddata", function() {
-            pixelWatcher = new PixelWatcher({
-                videoObject: videoObj,
-                height: 50,
-                offsetX: 25,
-                offsetY: videoObj.videoHeight/4
-            });
+ //        videoObj.addEventListener("loadeddata", function() {
+ //            pixelWatcher = new PixelWatcher({
+ //                videoObject: videoObj,
+ //                height: 50,
+ //                offsetX: 25,
+ //                offsetY: videoObj.videoHeight/4
+ //            });
 
       
-            // Sets up an event listener which displays text, colored with the inverse average RGB for the region we're watching. 
-            pixelWatcher.addEventListener("pixelstats", function(e) {
-                if(e.detail.avg >= 127) {
-                    $("header").css( "color", "black" );
-                    $("#main-logo").css({ '-webkit-filter': 'invert(0%)' });
-                } else {
-                    $("header").css( "color", "white" );
-                    $("#main-logo").css({ '-webkit-filter': 'invert(100%)' });
-                }
-            });
+ //            // Sets up an event listener which displays text, colored with the inverse average RGB for the region we're watching. 
+ //            pixelWatcher.addEventListener("pixelstats", function(e) {
+ //                if(e.detail.avg >= 127) {
+ //                    $("header").css( "color", "black" );
+ //                    $("#main-logo").css({ '-webkit-filter': 'invert(0%)' });
+ //                } else {
+ //                    $("header").css( "color", "white" );
+ //                    $("#main-logo").css({ '-webkit-filter': 'invert(100%)' });
+ //                }
+ //            });
             
-            // Start pixelWatcher running
-            // pixelWatcher.start();
-            // Add pixelWatcher's internal canvas to visualize what's happening for the demo
-            // document.body.appendChild(pixelWatcher.canvas);
-        });
-	}
+ //            // Start pixelWatcher running
+ //            // pixelWatcher.start();
+ //            // Add pixelWatcher's internal canvas to visualize what's happening for the demo
+ //            // document.body.appendChild(pixelWatcher.canvas);
+ //        });
+	// }
 
     function next() {
         isTransitioning = true;

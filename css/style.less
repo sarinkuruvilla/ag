@@ -8,6 +8,40 @@
 @screen-lg-min: 1200px;
 @screen-x-lg-min: 1500px;
 
+
+@font-face {
+    font-family: 'Mono Social Icons Font';
+    src: url('../fonts/MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.eot');
+    src: url('../fonts/MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.woff') format('woff'),
+         url('../fonts/MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+         url('../fonts/MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+    src: url('../fonts/MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.symbol:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}
+
+
 /*Mixing*/
 .alternative-gothic {
 	font-family: "alternate-gothic-no-3-d",sans-serif;
@@ -125,11 +159,11 @@ header {
 	position: absolute;
 	top: 100%;
 	z-index: 1;
-	background: url('../images/page2.jpg') @secondPageColor center center no-repeat;
-	background-size: contain;
+	background: url('../images/page2-mobile.jpg') @secondPageColor center center no-repeat;
+	background-size: auto 72%;
 	h1 {
 		color: @darkColor;
-		font-size: 2.3em;
+		font-size: 2.2em;
 		margin-top: 7%;
 		.alternative-gothic();
 	}
@@ -137,7 +171,8 @@ header {
 		.proxima-nova();
 		text-transform: uppercase;
 		color: @darkColor;
-		font-size: 15px;
+		font-size: 12px;
+		margin-top: -5px;
 	}
 	.artist-questions {
 		position: absolute;
@@ -171,7 +206,7 @@ header {
 	}
 	p {
 		color: @lightColor;
-		font-size: .8em;
+		font-size: .6em;
 		line-height: 1.8em;
 		padding: 0 10% 0 10%;
 		top:115px;
@@ -191,7 +226,7 @@ header {
 		padding: 23px;
 		position: absolute;
 		left: 50%;
-		top: 15%;
+		top: 12%;
 		.alternative-gothic();
 		color: @darkColor;
 		font-size: 40px;
@@ -199,8 +234,8 @@ header {
 	}
 	.mobile-connector {
 		width: 50%;
-		border-right: 2px dashed #ffffff;
-		top: 19%;
+		border-right: 2px dashed @lightColor;
+		top: 17%;
 		display: block;
 		height: 80px;
 		position: absolute;
@@ -217,7 +252,7 @@ header {
 	.mobile-knob {
 		width: 330px;
 		height: 330px;
-		top: 20%;
+		top: 18%;
 		position: absolute;
 		z-index: -1;
 		left: 50%;
@@ -226,9 +261,9 @@ header {
 	#data-description {
 		width: 100%;
 		position: absolute;
-		font-size: .8em;
+		font-size: .7em;
 		line-height: 1.8em;
-		top: 35%;
+		top: 31%;
 		text-align: left;
 		padding: 0 10% 0 10%;
 		text-align: center;
@@ -240,13 +275,13 @@ header {
 		text-align: center;
 		line-height: 32px;
 		img {
-			height: 200px;
-			width: 200px;
+			height: 175px;
+			width: 175px;
 		}
 	}
 	#graph-column-bar {
 		background: url('../images/data-column-bar.jpg') no-repeat bottom right;
-		top:85%;
+		top:89%;
 		height: auto;
 		width: 100%;
 		position: absolute;
@@ -332,7 +367,7 @@ header {
 		    -o-transform: rotateY(-55deg);
 		    
 		    transform-origin: top right;
-		    transform: rotateY(-55deg);    
+		    transform: rotateY(-55deg);
 		}
 
 		&:hover {
@@ -572,6 +607,7 @@ header {
 				color: @lightColor;
 				.proxima-nova();
 				font-size: 18px;
+				text-transform: uppercase;
 			}
 			img.rollzoom {
 				width: 100%;
@@ -581,17 +617,19 @@ header {
 			  	-o-transition: all .2s ease;
 			  	-ms-transition: all .2s ease;
 			  	transition: all .2s ease;
+
+				 &:hover {
+					cursor: pointer;
+					height:80px;
+					width: 80px;
+				    transform:scale(1.2);
+				    -ms-transform:scale(1.2); /* IE 9 */
+				    -moz-transform:scale(1.2); /* Firefox */
+				    -webkit-transform:scale(1.2); /* Safari and Chrome */
+				    -o-transform:scale(1.2); /* Opera */
+				}
 			}
-			img.rollzoom:hover {
-				cursor: pointer;
-				height:80px;
-				width: 80px;
-			    transform:scale(1.2);
-			    -ms-transform:scale(1.2); /* IE 9 */
-			    -moz-transform:scale(1.2); /* Firefox */
-			    -webkit-transform:scale(1.2); /* Safari and Chrome */
-			    -o-transform:scale(1.2); /* Opera */
-			}
+			
 		}
 		.gigante {
 			width: 160px;
@@ -624,7 +662,7 @@ header {
 	min-height: 300%;
 	width: 100%;
 	z-index: 1;
-	background: #ffffff;
+	background: @lightColor;
 	background-size: cover;
 
 	#main-image {
@@ -665,6 +703,13 @@ header {
 		z-index: 1;
 		top: 304px;
 		
+		a {
+			color: @lightColor;
+		}
+		a:hover {
+			color: darken(@lightColor, 20%);
+		}
+		
 		.product-details {
 			position: relative;
 			width: 284px;
@@ -688,7 +733,7 @@ header {
 			hr {
 				border: none;
 				height: 3px;
-				background-color: #ffffff;
+				background-color: @lightColor;
 				margin-bottom: 11px;	
 			}
 			.product-price {
@@ -776,12 +821,40 @@ footer {
 		font-size: 2em;
 	}
 	.address {
-		color: #ffffff;
+		color: @lightColor;
 		letter-spacing: 1em;
 		letter-spacing: .1em;
 		text-transform: uppercase;
 		line-height: 20px;
 		margin-bottom: 20px;
+	}
+	.social {
+		
+		
+		color: @lightColor;
+		ul {
+			padding: 0;
+			list-style-type: none;
+			li {
+				float: left;
+				font-size: 3em;
+				margin-right: 10px;
+				a {
+					color: @lightColor;
+					&:hover {
+						text-decoration: none;
+						color: darken(@lightColor, 20%);
+					}
+				}
+				
+			}
+		}
+	}
+	.copyright {
+		text-align: left;
+		width: auto;
+		position: absolute;
+		bottom: 20px;
 	}
 }
 
@@ -825,10 +898,13 @@ footer {
 		p {
 			font-size: 1em;
 			line-height: 2em;
-			top: 140px;
+			top: 100px;
 			left:5%;
 			right:5%;
 			width:90%;
+		}
+		.circle {
+			top: 12%;
 		}
 		/*.mobile-knob {
 			top: 11%;
@@ -951,6 +1027,11 @@ footer {
 			}
 		}
 	}
+	footer {
+		.copyright {
+
+		}
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -977,13 +1058,20 @@ footer {
 		width: 130px;
 		margin: -65px 0 0 -65px;
 	}
+	#page2 {
+		background: url('../images/page2.jpg') @secondPageColor center center no-repeat;
+		background-size: contain;
+	}
 
 	#page3 {
 		height: 300%;
-
+		
 		h1 {
 			top: 50px;
 			font-size: 3.3em;
+		}
+		p{
+			top: 150px;
 		}
 		.circle {
 			padding: 29px;
