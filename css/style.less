@@ -226,7 +226,7 @@ header {
 		padding: 23px;
 		position: absolute;
 		left: 50%;
-		top: 15%;
+		top: 12%;
 		.alternative-gothic();
 		color: @darkColor;
 		font-size: 40px;
@@ -235,7 +235,7 @@ header {
 	.mobile-connector {
 		width: 50%;
 		border-right: 2px dashed @lightColor;
-		top: 19%;
+		top: 17%;
 		display: block;
 		height: 80px;
 		position: absolute;
@@ -252,7 +252,7 @@ header {
 	.mobile-knob {
 		width: 330px;
 		height: 330px;
-		top: 20%;
+		top: 18%;
 		position: absolute;
 		z-index: -1;
 		left: 50%;
@@ -263,7 +263,7 @@ header {
 		position: absolute;
 		font-size: .7em;
 		line-height: 1.8em;
-		top: 34%;
+		top: 31%;
 		text-align: left;
 		padding: 0 10% 0 10%;
 		text-align: center;
@@ -281,7 +281,7 @@ header {
 	}
 	#graph-column-bar {
 		background: url('../images/data-column-bar.jpg') no-repeat bottom right;
-		top:85%;
+		top:89%;
 		height: auto;
 		width: 100%;
 		position: absolute;
@@ -367,7 +367,7 @@ header {
 		    -o-transform: rotateY(-55deg);
 		    
 		    transform-origin: top right;
-		    transform: rotateY(-55deg);    
+		    transform: rotateY(-55deg);
 		}
 
 		&:hover {
@@ -607,6 +607,7 @@ header {
 				color: @lightColor;
 				.proxima-nova();
 				font-size: 18px;
+				text-transform: uppercase;
 			}
 			img.rollzoom {
 				width: 100%;
@@ -616,17 +617,19 @@ header {
 			  	-o-transition: all .2s ease;
 			  	-ms-transition: all .2s ease;
 			  	transition: all .2s ease;
+
+				 &:hover {
+					cursor: pointer;
+					height:80px;
+					width: 80px;
+				    transform:scale(1.2);
+				    -ms-transform:scale(1.2); /* IE 9 */
+				    -moz-transform:scale(1.2); /* Firefox */
+				    -webkit-transform:scale(1.2); /* Safari and Chrome */
+				    -o-transform:scale(1.2); /* Opera */
+				}
 			}
-			img.rollzoom:hover {
-				cursor: pointer;
-				height:80px;
-				width: 80px;
-			    transform:scale(1.2);
-			    -ms-transform:scale(1.2); /* IE 9 */
-			    -moz-transform:scale(1.2); /* Firefox */
-			    -webkit-transform:scale(1.2); /* Safari and Chrome */
-			    -o-transform:scale(1.2); /* Opera */
-			}
+			
 		}
 		.gigante {
 			width: 160px;
@@ -699,6 +702,13 @@ header {
 		position: absolute;
 		z-index: 1;
 		top: 304px;
+		
+		a {
+			color: @lightColor;
+		}
+		a:hover {
+			color: darken(@lightColor, 20%);
+		}
 		
 		.product-details {
 			position: relative;
@@ -831,11 +841,12 @@ footer {
 				margin-right: 10px;
 				a {
 					color: @lightColor;
+					&:hover {
+						text-decoration: none;
+						color: darken(@lightColor, 20%);
+					}
 				}
-				a:hover {
-					text-decoration: none;
-					color: darken(@lightColor, 20%);
-				}
+				
 			}
 		}
 	}
@@ -887,10 +898,13 @@ footer {
 		p {
 			font-size: 1em;
 			line-height: 2em;
-			top: 140px;
+			top: 100px;
 			left:5%;
 			right:5%;
 			width:90%;
+		}
+		.circle {
+			top: 12%;
 		}
 		/*.mobile-knob {
 			top: 11%;
