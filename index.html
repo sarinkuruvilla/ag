@@ -10,6 +10,37 @@
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" href="css/bigvideo.css"/>
 
+    <style>
+        #cover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-color: #eee;
+        }
+
+        #cover-inner {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 350px;
+            height: 350px;
+        }
+        #cover-message {
+            position: relative;
+            top: 165px;
+        }
+
+    </style>
+
     <script src="js/vendor/modernizr-2.8.2.min.js"></script>
 
     <script type="text/javascript" src="//use.typekit.net/vna1ywe.js"></script>
@@ -21,10 +52,19 @@
 </head>
 
 <body>
+<div id="cover" >
+    <div id="cover-inner">
+        <div id="cover-message">
+            <h1></h1>
+        </div>
+    </div>
+</div>
 
-<div class="page1" id="screen-1" data-video="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f"
-     data-videowithaudio="http://player.vimeo.com/external/95467484.hd.mp4?s=9be9a5267835af977360c94f415999c7"
-     data-mobile-streaming="http://player.vimeo.com/external/95467484.m3u8?p=high,standard,mobile&s=95bbb4b217ebeb8b1db34d83be26d6bb"><!-- data-video="media/inst.mp4" -->
+<div class="page1"
+     id="screen-1"
+     data-video="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f"
+     data-video-no-audio="http://player.vimeo.com/external/95467484.hd.mp4?s=9be9a5267835af977360c94f415999c7"
+     data-video-mobile-streaming="http://player.vimeo.com/external/95467484.m3u8?p=high,standard,mobile&s=95bbb4b217ebeb8b1db34d83be26d6bb">
 
     <div class="container header-container">
         <div class="row">
@@ -74,39 +114,97 @@
         <polygon points="0,0 200,32 400,0 400,32 0,33" style="fill:#000000;"/>
     </svg>
     <div class="overflow-container">
-        <h1 data-anchor-target="#page3" data-bottom-top="opacity:0;" data-center-top="opacity:1;position:absolute;" data-top-top="opacity:1;position:fixed;" data--5-top-top=""
-            data-bottom-bottom="opacity:1;" data-300-top-bottom="opacity:0;">FINDING INVESTORS MEANS KNOWING THE NUMBERS</h1>
+        <h1 data-anchor-target="#page3"
+            data-bottom-top="opacity:0;"
+            data-center-top="opacity:1;position:absolute;"
+            data-top-top="opacity:1;position:fixed;"
+            data--5-top-top=""
+            data-bottom-bottom="opacity:1;"
+            data-300-top-bottom="opacity:0;">FINDING INVESTORS MEANS KNOWING THE NUMBERS</h1>
 
-        <p data-anchor-target="#page3" data-bottom-top="" data--100-center-top="position:absolute;" data-top-top="opacity:0;position:fixed;" data--50-top-top="opacity:1;" data-500-center="left:5%;"
-           data-center="left:-150%" data-bottom-bottom="" data-top-bottom="">Artistgrowth organizes your data into a portfolio that can help you attract the kind of attention you need to move your
+        <p data-anchor-target="#page3"
+           data-bottom-top=""
+           data--100-center-top="position:absolute;"
+           data-top-top="opacity:0;position:fixed;"
+           data--50-top-top="opacity:1;"
+           data-500-center="left:5%;"
+           data-center="left:-150%"
+           data-bottom-bottom=""
+           data-top-bottom="">Artistgrowth organizes your data into a portfolio that can help you attract the kind of attention you need to move your
             career forward. You’ve got great music, now you need a way to show off what you’ve been up to so you can start building a team.</p>
 
-        <figure class="circle" id="youCircle" data-anchor-target="#page3" data-bottom-top="" data--100-center-top="position:absolute;left:10%;" data-top-top="position:fixed;left:10%;"
-                data--100-top-top="opacity:1;" data-500-center="left:10%;" data-center="left:-150%" data-bottom-bottom="" data-top-bottom="">YOU
+        <figure class="circle"
+                id="youCircle"
+                data-anchor-target="#page3"
+                data-bottom-top=""
+                data--100-center-top="position:absolute;left:10%;"
+                data-top-top="position:fixed;left:10%;"
+                data--100-top-top="opacity:1;"
+                data-500-center="left:10%;"
+                data-center="left:-150%"
+                data-bottom-bottom=""
+                data-top-bottom="">YOU
         </figure>
 
         <div class="mobile-connector visible-xs visible-sm"></div>
 
-        <img id="knob" class="hidden-xs hidden-sm" data-anchor-target="#page3" data-bottom-top="" data--100-center-top="position:absolute;" data-top-top="position:fixed;" data--100-top-top=""
-             data-500-center="left:50%;" data-center="left:-50%" data-bottom-bottom="" data-top-bottom="" src="images/knob/A_knob-render_2_00000.jpg"/>
+        <img id="knob"
+             class="hidden-xs hidden-sm"
+             data-anchor-target="#page3"
+             data-bottom-top=""
+             data--100-center-top="position:absolute;"
+             data-top-top="position:fixed;"
+             data--100-top-top=""
+             data-500-center="left:50%;"
+             data-center="left:-50%"
+             data-bottom-bottom=""
+             data-top-bottom=""
+             src="images/knob/A_knob-render_2_00000.jpg"/>
 
         <img class="mobile-knob visible-xs visible-sm" src="images/knob/A_knob-render_2_00060.jpg"/>
 
-        <div id="data-description" data-anchor-target="#page3" data-bottom-top="" data--100-center-top="position:absolute;left:120%;" data-top-top="position:fixed;left:120%;"
-             data--100-top-top="opacity:1;" data-500-center="left:120%;" data-center="left:9%" data-bottom-bottom="opacity:1;" data-300-top-bottom="opacity:0;" data-top-bottom="">
+        <div id="data-description"
+             data-anchor-target="#page3"
+             data-bottom-top=""
+             data--100-center-top="position:absolute;left:120%;"
+             data-top-top="position:fixed;left:120%;"
+             data--100-top-top="opacity:1;"
+             data-500-center="left:120%;"
+             data-center="left:9%"
+             data-bottom-bottom="opacity:1;"
+             data-300-top-bottom="opacity:0;"
+             data-top-bottom="">
             Investors aren’t always the Wolves of Wall Street. In the music industry, investors are the people who watch your numbers, come to your shows, and take note of your fan base. If they like
             what they see, they can be the difference between where you are and where you want to be. In order to show you’re worth investing in, you need to present your business [that’s you]
             professionally. This means being organized, up to date, and prepared. To ensure the best business relationships to help you on your way, Artist Growth can bridge the gap between you and
             your potential investors.
         </div>
 
-        <div id="graph-sphere" data-anchor-target="#page3" data-bottom-top="" data--100-center-top="position:absolute;left:150%;" data-top-top="position:fixed;left:150%;"
-             data--100-top-top="opacity:1;" data-500-center="left:150%;" data-center="left:39%" data-bottom-bottom="opacity:1;" data-300-top-bottom="opacity:0;" data-top-bottom="">
+        <div id="graph-sphere"
+             data-anchor-target="#page3"
+             data-bottom-top=""
+             data--100-center-top="position:absolute;left:150%;"
+             data-top-top="position:fixed;left:150%;"
+             data--100-top-top="opacity:1;"
+             data-500-center="left:150%;"
+             data-center="left:39%"
+             data-bottom-bottom="opacity:1;"
+             data-300-top-bottom="opacity:0;"
+             data-top-bottom="">
             <img src="images/data-sphere.png" border=0/>
         </div>
 
-        <div id="graph-column-bar" data-anchor-target="#page3" data-bottom-top="" data--100-center-top="position:absolute;right:-60%;" data-top-top="position:fixed;right:-60%;"
-             data--100-top-top="opacity:1;" data-500-center="right:-60%;" data-center="right:10%" data-bottom-bottom="opacity:1;" data-300-top-bottom="opacity:0;" data-top-bottom="">
+        <div id="graph-column-bar"
+             data-anchor-target="#page3"
+             data-bottom-top=""
+             data--100-center-top="position:absolute;right:-60%;"
+             data-top-top="position:fixed;right:-60%;"
+             data--100-top-top="opacity:1;"
+             data-500-center="right:-60%;"
+             data-center="right:10%"
+             data-bottom-bottom="opacity:1;"
+             data-300-top-bottom="opacity:0;"
+             data-top-bottom="">
             <div id="column-description">Whether you’re dusting off that old guitar or selling out shows on the road, Artist Growth is the businessman in your pocket. Instead of needing to calculate,
                 organize, and present your work in a professional portfolio, Artist Growth can manage your inventory to make it presentable to potential investors while keeping track of your contacts,
                 tour routing, finances, and merchandise.
@@ -141,21 +239,53 @@
         <polygon points="0,0 200,32 400,0 400,32 0,33"/>
     </svg>
     <div class="overflow-container">
-        <h1 data-anchor-target="#page4" data-bottom-top="margin-top:-150px;opacity:0;" data--200-center-top="margin-top:0;opacity:1;position:absolute;" data-top-top="position:fixed;"
-            data-500-center="left:10%;" data-center="left:-150%;">WE CAN HELP WITH THAT</h1>
+        <h1 data-anchor-target="#page4"
+            data-bottom-top="margin-top:-150px;opacity:0;"
+            data--200-center-top="margin-top:0;opacity:1;position:absolute;"
+            data-top-top="position:fixed;"
+            data-500-center="left:10%;"
+            data-center="left:-150%;">WE CAN HELP WITH THAT</h1>
 
-        <div id="description-paragraph" data-anchor-target="#page4" data-bottom-top="left:10%;opacity:0;" data--200-center-top="left:10%;opacity:1;position:absolute;" data-top-top="position:fixed;"
-             data-500-center="left:10%;" data-center="left:-150%;">
+        <div id="description-paragraph"
+             data-anchor-target="#page4"
+             data-bottom-top="left:10%;opacity:0;"
+             data--200-center-top="left:10%;opacity:1;position:absolute;"
+             data-top-top="position:fixed;"
+             data-500-center="left:10%;"
+             data-center="left:-150%;">
             <p>Let Artist Growth represent you in the business world so you can keep doing what you do best. Making music. Making a career.</p>
         </div>
-        <div id="iphone-screen" data-anchor-target="#page4" data-bottom-top="left:200%;" data--200-center-top="left:54%;position:absolute;" data-top-top="position:fixed;" data-500-center="left:54%;"
+        <div id="iphone-screen"
+             data-anchor-target="#page4"
+             data-bottom-top="left:200%;"
+             data--200-center-top="left:54%;position:absolute;"
+             data-top-top="position:fixed;"
+             data-500-center="left:54%;"
              data-center="left:-105%;"><img src="images/iphone-app.png" border=0/></div>
-        <div id="macbook-screen" data-anchor-target="#page4" data-bottom-top="left:200%;" data--275-center-top="left:55%;position:absolute;" data-top-top="position:fixed;" data-500-center="left:55%;"
-             data-center="left:-13%;" data-100-bottom="top:250px;" data-top-bottom="top:-529px;"><img src="images/macbook.png" border=0/></div>
-        <div id="graph" data-anchor-target="#page4" data--275-center-top="left:150%;position:absolute;" data-top-top="position:fixed;" data-500-center="left:150%;" data-center="left:60%;"
-             data-100-bottom="top:250px;" data-top-bottom="top:-529px;"><img src="images/ag-graph.jpg" border=0/></div>
-        <div id="graph-description" data-anchor-target="#page4" data--275-center-top="left:150%;position:absolute;" data-top-top="position:fixed;" data-500-center="left:150%;" data-center="left:60%;"
-             data-100-bottom="top:565px;" data-top-bottom="top:-229px;"><p>Our tools and reports will bridge the gap between you and a major management company or record label, some of majors that
+        <div id="macbook-screen"
+             data-anchor-target="#page4"
+             data-bottom-top="left:200%;"
+             data--275-center-top="left:55%;position:absolute;"
+             data-top-top="position:fixed;"
+             data-500-center="left:55%;"
+             data-center="left:-13%;"
+             data-100-bottom="top:250px;"
+             data-top-bottom="top:-529px;"><img src="images/macbook.png" border=0/></div>
+        <div id="graph" data-anchor-target="#page4"
+             data--275-center-top="left:150%;position:absolute;"
+             data-top-top="position:fixed;"
+             data-500-center="left:150%;"
+             data-center="left:60%;"
+             data-100-bottom="top:250px;"
+             data-top-bottom="top:-529px;"><img src="images/ag-graph.jpg" border=0/></div>
+        <div id="graph-description"
+             data-anchor-target="#page4"
+             data--275-center-top="left:150%;position:absolute;"
+             data-top-top="position:fixed;"
+             data-500-center="left:150%;"
+             data-center="left:60%;"
+             data-100-bottom="top:565px;"
+             data-top-bottom="top:-229px;"><p>Our tools and reports will bridge the gap between you and a major management company or record label, some of majors that
             using our services are listed below.</p></div>
 
     </div>
@@ -290,20 +420,27 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+<script type="text/javascript">
+    $(window).on("load", function () {
+        $("#cover").fadeOut();
+    });
+</script>
+
+<script src="js/vendor/jquery-ui-1.8.22.custom.min.js"></script>
+<script src="js/vendor/imagesloaded.pkgd.js"></script>
+<script src="js/vendor/video.js"></script>
 <script src="js/vendor/bigvideo.js"></script>
+
 <script src="js/vendor/classie.js"></script>
 <script src="js/vendor/isotope.pkgd.min.js"></script>
 <script src="js/vendor/javascript-video-scrubber.js"></script>
-<script src="js/vendor/jquery-ui-1.8.22.custom.min.js"></script>
 <script src="js/vendor/jquery.flexverticalcenter.js"></script>
-<script src="js/vendor/jquery.imagesloaded.min.js"></script>
-<script src="js/vendor/jquery.jsPlumb-1.4.1-all-min.js"></script>
+<script src="js/vendor/jquery.jsPlumb-1.6.2.js"></script>
 <script src="js/vendor/jquery.transit.min.js"></script>
 <script src="js/vendor/skrollr.min.js"></script>
-<script src="js/vendor/video.js"></script>
 
 <script src="js/marketing-custom.js"></script>
-<script src="js/pixelWatcher.js"></script>
 
 </body>
 
