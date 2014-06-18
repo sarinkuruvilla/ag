@@ -70,7 +70,8 @@ function resizeAdjustments() { // fit everything to the screen
 function getYOffset() { // get distance scrolled from the top
     var pageY;
 	if(typeof(window.pageYOffset)=='number') {
-		pageY=window.pageYOffset-1900;
+
+		pageY=window.pageYOffset-(window.innerHeight*2 - (window.innerHeight/3));
 	}else{
 		pageY=document.documentElement.scrollTop; // IE
 	}

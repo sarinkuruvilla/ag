@@ -6,13 +6,16 @@ $( document ).ready(function() {
 
     $browserHeight = $(window).height();
     $browserWidth = $(window).width();
-    var circlePos = ($browserHeight/2) - 165;
+    var circlePos = ($browserHeight/2) + 55;
     var knobPos = ($browserHeight/2) - 275;
     if(!Modernizr.touch) {
         $('.circle').css({ top: circlePos + 'px' });
     }
     $('#knob').css({ top: knobPos + 'px' });
 
+    if($browserHeight<=800) {
+        $('.cube-main').css({ height: 290 });
+    }
 
     var page5bottom = $('#page5').position().top + $('#page5').outerHeight(true);
     $('#page6').css({ top: page5bottom });
