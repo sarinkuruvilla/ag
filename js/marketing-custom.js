@@ -312,6 +312,11 @@ $(document).ready(function () {
         $current.children("img").first().toggleClass("rollzoom");
         $container.isotope("layout");
     });
+    
+    $window.on("scroll", function () {
+        console.debug("window.scroll");
+        jsPlumb.repaintEverything();
+    });
 
     $window.on("resize", function () {
         console.debug("window.resize");
@@ -319,8 +324,5 @@ $(document).ready(function () {
         adjustImagePositioning();
     });
 
-    $window.on("scroll", function () {
-        console.debug("window.scroll");
-        jsPlumb.repaintEverything();
-    });
+    
 });
