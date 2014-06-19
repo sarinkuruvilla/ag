@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     var $window = $(window);
-    var $browserHeight = $(window).height();
-    var $browserWidth = $(window).width();
+    var $browserHeight = $window.height();
+    var $browserWidth = $window.width();
     var circlePos = ($browserHeight / 2) + 55;
     var knobPos = ($browserHeight / 2) - 275;
     if (!Modernizr.touch) {
@@ -312,11 +312,6 @@ $(document).ready(function () {
         $current.children("img").first().toggleClass("rollzoom");
         $container.isotope("layout");
     });
-    
-    $window.on("scroll", function () {
-        console.debug("window.scroll");
-        jsPlumb.repaintEverything();
-    });
 
     $window.on("resize", function () {
         console.debug("window.resize");
@@ -324,5 +319,9 @@ $(document).ready(function () {
         adjustImagePositioning();
     });
 
-    
+    $window.on("scroll", function () {
+        console.debug("window.scroll");
+        jsPlumb.repaintEverything();
+    });
+
 });
