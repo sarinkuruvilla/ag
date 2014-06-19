@@ -1,11 +1,12 @@
 $(document).ready(function () {
+
     var $window = $(window);
     var $browserHeight = $window.height();
     var $browserWidth = $window.width();
-    var circlePos = ($browserHeight / 2) - 165;
+    var circlePos = ($browserHeight / 2) + 55;
     var knobPos = ($browserHeight / 2) - 275;
     if (!Modernizr.touch) {
-        $(".circle").css({ top: circlePos + "px" });
+        $('.circle').css({ top: circlePos + 'px' });
     }
     $("#knob").css({ top: knobPos + "px" });
 
@@ -13,6 +14,10 @@ $(document).ready(function () {
     var page6 = $("#page6");
     var page5bottom = page5.position().top + page5.outerHeight(true);
     page6.css({ top: page5bottom });
+
+    if ($browserHeight <= 800) {
+        $('.cube-main').css({ height: 290 });
+    }
 
     var page6bottom = page5bottom + page6.outerHeight(true);
     $("footer").css({ top: page6bottom });
@@ -318,4 +323,5 @@ $(document).ready(function () {
         console.debug("window.scroll");
         jsPlumb.repaintEverything();
     });
+
 });
