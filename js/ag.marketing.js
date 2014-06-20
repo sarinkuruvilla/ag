@@ -43,11 +43,13 @@ $(document).ready(function () {
                     tolerance: "touch",
                     hoverClass: "dropHover"
                 },
+                
                 connectorStyle: {
                     lineWidth: 2.5,
                     strokeStyle: "#ffffff",
                     dashstyle: "3 1"
                 },
+                
                 connector: [
                     "Flowchart", {
                         gap: 10,
@@ -66,14 +68,9 @@ $(document).ready(function () {
             var e3 = jsPlumb.addEndpoint($("#knob"), endpoint3);
             var e4 = jsPlumb.addEndpoint($("#data-description"), endpoint4);
 
-            jsPlumb.connect({
-                source: e1,
-                target: e2
-            });
-            jsPlumb.connect({
-                source: e3,
-                target: e4
-            });
+            jsPlumb.setContainer($("#page3 .overflow-container"));
+            jsPlumb.connect({ source: e1, target: e2 });
+            jsPlumb.connect({ source: e3, target: e4 });
         });
     }
 
