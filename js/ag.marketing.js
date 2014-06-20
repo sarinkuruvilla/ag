@@ -26,93 +26,45 @@ $(document).ready(function () {
         jsPlumb.bind("ready", function () {
             jsPlumb.setRenderMode(jsPlumb.SVG);
 
-            var endpoint_1 = {
+            var endpointDefaults = {
                 endpoint: "Blank",
-                anchors: ["Right", "Left"],
+                maxConnections: 10,
+                isTarget: true,
+                isSource: true,
+                connectionsDetachable: false,
+
+                dragOptions: {
+                    zIndex: 20
+                },
+
+                cssClass: "_jsPlumb_endpoint",
+
+                dropOptions: {
+                    tolerance: "touch",
+                    hoverClass: "dropHover"
+                },
                 connectorStyle: {
                     lineWidth: 2.5,
                     strokeStyle: "#ffffff",
                     dashstyle: "3 1"
                 },
-                isSource: true,
-                maxConnections: 10,
-                isTarget: true,
-
-                dropOptions: {
-                    tolerance: "touch",
-                    hoverClass: "dropHover"
-                }
+                connector: [
+                    "Flowchart", {
+                        gap: 10,
+                        cornerRadius: 35
+                    }
+                ]
             };
 
-            var endpoint_2 = {
-                endpoint: "Blank",
-                anchor: [ 0.2, 0.4, 0, 0, 0, 50 ],
-                connectorStyle: {
-                    lineWidth: 2.5,
-                    strokeStyle: "#ffffff",
-                    dashstyle: "3 1"
-                },
-                isSource: true,
-                maxConnections: 10,
-                isTarget: true,
+            var endpoint1 = $.extend({}, endpointDefaults, { anchors: ["Right", "Left"] });
+            var endpoint2 = $.extend({}, endpointDefaults, { anchor: [ 0.2, 0.4, 0, 0, 0, 50 ] });
+            var endpoint3 = $.extend({}, endpointDefaults, { anchor: [ 0.8, 0.4, 0, 0, 0, 50 ] });
+            var endpoint4 = $.extend({}, endpointDefaults, { anchor: [ -0.05, 0.2, 0, 1, 0, 50 ]});
 
-                dropOptions: {
-                    tolerance: "touch",
-                    hoverClass: "dropHover"
-                }
-            };
-
-            var endpoint_3 = {
-                endpoint: "Blank",
-                anchor: [ 0.8, 0.4, 0, 0, 0, 50 ],
-                connectorStyle: {
-                    lineWidth: 2.5,
-                    strokeStyle: "#ffffff",
-                    dashstyle: "3 1"
-                },
-                isSource: true,
-                maxConnections: 10,
-                isTarget: true,
-
-                dropOptions: {
-                    tolerance: "touch",
-                    hoverClass: "dropHover"
-                }
-            };
-
-            var endpoint_4 = {
-                endpoint: "Blank",
-                //anchor:[ -0.05, 0.2, 0, -1, 0, 50 ],
-
-                anchor: [ -0.05, 0.2, 0, 1, 0, 50 ],
-                connectorStyle: {
-                    lineWidth: 2.5,
-                    strokeStyle: "#ffffff",
-                    dashstyle: "3 1"
-                },
-                isSource: true,
-                maxConnections: 10,
-                isTarget: true,
-
-                dropOptions: {
-                    tolerance: "touch",
-                    hoverClass: "dropHover"
-                }
-            };
-
-
-            jsPlumb.Defaults.DragOptions = {
-                zIndex: 20
-            };
-            jsPlumb.Defaults.Connector = ["Flowchart", {
-                gap: 10,
-                cornerRadius: 35
-            }];
-
-            var e1 = jsPlumb.addEndpoint("youCircle", endpoint_1);
-            var e2 = jsPlumb.addEndpoint("knob", endpoint_2);
-            var e3 = jsPlumb.addEndpoint("knob", endpoint_3);
-            var e4 = jsPlumb.addEndpoint("data-description", endpoint_4);
+            var e1 = jsPlumb.addEndpoint($("#you-circle"), endpoint1);
+            var e2 = jsPlumb.addEndpoint($("#knob"), endpoint2);
+            var e3 = jsPlumb.addEndpoint($("#knob"), endpoint3);
+            var e4 = jsPlumb.addEndpoint($("#data-description"), endpoint4);
 
             jsPlumb.connect({
                 source: e1,
