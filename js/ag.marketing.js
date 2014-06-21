@@ -74,12 +74,30 @@ $(document).ready(function () {
         });
     }
 
-    var totalFrames = 61; // the number of images in the sequence of JPEG files (this could be calculated server-side by scanning the frames folder)
-
-    for (var i = 0; i < totalFrames; i++) { // loop for each image in sequence
-        images[i] = new Image(); // add image object to array
-        images[i].src = "images/knob/A_knob-render_2_" + pad(i, 5) + ".jpg"; // set the source of the image object
+    function padLeft(number, length) {
+        var result = String(number);
+        while (result.length < length) {
+            result = "0" + result;
+        }
+        return result;
     }
+
+    var frameCount = 61,
+        images = [];
+    for (var i = 0; i < frameCount; i++) { // loop for each image in sequence
+        images[i] = new Image(); // add image object to array
+        images[i].src = "images/knob/A_knob-render_2_" + padLeft(i, 5) + ".jpg"; // set the source of the image object
+    }
+    
+    $("#knob").videoScrubber({
+        images: images,
+        frameCount: frameCount,
+        yOffsetAdjustment: function () {
+            return -1 * (window.innerHeight * 2 - (window.innerHeight / 3));
+        },
+        scrollRatio: 2,
+        frameRatio: 20
+    });
 
     if (!Modernizr.touch && $browserWidth >= 992) {
         var windowWidth = $window.width();
