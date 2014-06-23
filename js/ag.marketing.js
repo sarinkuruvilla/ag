@@ -10,7 +10,7 @@
             $browserWidth = $window.width(),
             circlePos = ($browserHeight / 2) + 55,
             knobPos = ($browserHeight / 2) - 275;
-        
+
         if (!Modernizr.touch) {
             $(".circle").css({ top: circlePos + "px" });
         }
@@ -19,7 +19,7 @@
         var page5 = $("#page5"),
             page6 = $("#page6"),
             page5bottom = page5.position().top + page5.outerHeight(true);
-        
+
         page6.css({ top: page5bottom });
 
         if ($browserHeight <= 800) {
@@ -73,15 +73,15 @@
                     ]
                 };
 
-                var endpoint1 = $.extend({}, endpointDefaults, { anchors: ["Right", "Left"], isSource: true });
-                var endpoint2 = $.extend({}, endpointDefaults, { anchor: [ 0.2, 0.4, 0, 0, 0, 50 ], isTarget: true });
-                var endpoint3 = $.extend({}, endpointDefaults, { anchor: [ 0.8, 0.4, 0, 0, 0, 50 ], isSource: true });
-                var endpoint4 = $.extend({}, endpointDefaults, { anchor: [ -0.05, 0.2, 0, 1, 0, 50 ], isTarget: true });
+                var endpoint1 = $.extend({}, endpointDefaults, { anchors: ["Right", "Left"], isSource: true }),
+                    endpoint2 = $.extend({}, endpointDefaults, { anchor: [ 0.2, 0.4, 0, 0, 0, 50 ], isTarget: true }),
+                    endpoint3 = $.extend({}, endpointDefaults, { anchor: [ 0.8, 0.4, 0, 0, 0, 50 ], isSource: true }),
+                    endpoint4 = $.extend({}, endpointDefaults, { anchor: [ -0.05, 0.2, 0, 1, 0, 50 ], isTarget: true });
 
-                var e1 = jsPlumb.addEndpoint($("#you-circle"), endpoint1);
-                var e2 = jsPlumb.addEndpoint($("#knob"), endpoint2);
-                var e3 = jsPlumb.addEndpoint($("#knob"), endpoint3);
-                var e4 = jsPlumb.addEndpoint($("#data-description"), endpoint4);
+                var e1 = jsPlumb.addEndpoint($("#you-circle"), endpoint1),
+                    e2 = jsPlumb.addEndpoint($("#knob"), endpoint2),
+                    e3 = jsPlumb.addEndpoint($("#knob"), endpoint3),
+                    e4 = jsPlumb.addEndpoint($("#data-description"), endpoint4);
 
                 jsPlumb.setContainer($("#page3 .overflow-container"));
                 jsPlumb.connect({ source: e1, target: e2 });
@@ -89,7 +89,7 @@
             });
         }
     }
-    
+
     // Yeah, that's right.
     function createKnobScrubber() {
         var frameCount = 61,
@@ -109,12 +109,12 @@
             frameRatio: 20
         });
     }
-    
+
     function createBigVideo() {
         var $screenGrab = $("#screenGrab"),
             page1 = $("#page1"),
             playButton = $("#playBtn");
-        
+
         $screenGrab.imagesLoaded(adjustImagePositioning);
 
         console.group("Video data diagnostics:");
@@ -137,7 +137,7 @@
                 // Fired when the player has downloaded data at the current playback position
                 $screenGrab.transit({ "opacity": 0 }, 300);
             });
-            
+
             playButton.click(function() {
                 $(this).animate({ opacity: "hide" });
                 $(".content-text").animate({ opacity: "hide" });
@@ -177,7 +177,7 @@
             });
         }
     }
-    
+
     function createArtistGrid() {
         var container = $(".our-artists");
 
@@ -205,7 +205,7 @@
 
             $(".artist-photo").not(currentPhoto).each(function() {
                 var $this = $(this);
-                
+
                 if ($this.hasClass("gigante")) {
                     $this.removeClass("gigante");
                     $this.children("img").first().addClass("rollzoom");
@@ -217,14 +217,14 @@
             container.isotope("layout");
         });
     }
-    
+
     // Triggered after all images have been either loaded or confirmed broken.
     function adjustImagePositioning() {
         console.debug("adjustImagePositioning");
 
         var screenGrab = $("#screenGrab"),
             $window = $(window);
-        
+
         // TODO: find out why we are doing this - seems crazy expensive computationally
         var tempImage = new Image();
 
@@ -257,7 +257,7 @@
             top: ( windowHeight - newHeight ) / 2
         });
     }
-    
+
     function padLeft(number, length) {
         var result = String(number);
         while (result.length < length) {
