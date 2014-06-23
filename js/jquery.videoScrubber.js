@@ -1,11 +1,10 @@
-/*jslint browser: true*/
+/*jshint browser: true*/
 /*global jQuery*/
 
 // Based on https://github.com/ghepting/javascript-video-scrubber/
+// TODO: Add ability to resize video to a target container (like the window).
 
 (function ($) {
-    "use strict";
-        
     var requestAnimationFrame = window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
