@@ -1,0 +1,27 @@
+{
+    "name": "ag.marketing",
+    "version": "0.0.0",
+    "description": "",
+    "author": "dev@artistgrowth.com",
+
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "matchdep": "*",
+
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-contrib-copy": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-less": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-htmlmin": "*",
+        "grunt-contrib-cssmin": "*",
+        "grunt-remove-logging": "*",
+        "grunt-htmlhint": "*",
+        "grunt-banner": "*",
+        "grunt-usemin": "*",
+        "grunt-express": "*",
+        "grunt-open": "*"
+    }
+}
