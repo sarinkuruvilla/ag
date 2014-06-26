@@ -42,7 +42,25 @@ the web server.
 
 ## Publishing
 
-If I were a cool guy, this would already be done, but I'm pretty lame.
+Deployment is performed by committing the output of the production build to an
+appropriate branch on GitHub. The commit will always be made to the same
+repository from which Grunt was executed. What this means is that, if you are
+working on your personal fork, it will commit and push to a branch in your
+personal fork.
+
+To perform a deployment, use the command:
+
+```shell
+grunt deploy --branch=<branch>
+```
+
+The `branch` option can be one of `master`, `gh-pages`, or `test`. If no value
+is specified, it will default to `test`. Executing this command will first
+perform a production build. It will then commit the build output to the
+specified branch and push it to GitHub.
+
+As the deployment will completely replace the contents of the target branch, you
+should take care when using anything other the `test` option.
 
 ## All the Tasks!
 

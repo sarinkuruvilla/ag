@@ -6,22 +6,22 @@
 
     "devDependencies": {
         "grunt": "~0.4.5",
-        "matchdep": "*",
+        "matchdep": "~0.3.0",
 
-        "grunt-contrib-watch": "*",
-        "grunt-contrib-clean": "*",
-        "grunt-contrib-copy": "*",
-        "grunt-contrib-jshint": "*",
-        "grunt-contrib-less": "*",
-        "grunt-contrib-concat": "*",
-        "grunt-contrib-uglify": "*",
+        "grunt-contrib-watch": "~0.6.1",
+        "grunt-contrib-clean": "~0.5.0",
+        "grunt-contrib-copy": "~0.5.0",
+        "grunt-contrib-jshint": "~0.10.0",
+        "grunt-contrib-less": "~0.11.3",
+        "grunt-contrib-concat": "~0.4.0",
+        "grunt-contrib-uglify": "~0.5.0",
         "grunt-contrib-htmlmin": "*",
-        "grunt-contrib-cssmin": "*",
-        "grunt-remove-logging": "*",
-        "grunt-htmlhint": "*",
-        "grunt-banner": "*",
-        "grunt-usemin": "*",
-        "grunt-express": "*",
-        "grunt-open": "*"
+        "grunt-contrib-cssmin": "~0.10.0",
+        "grunt-htmlhint": "~0.4.0",
+        "grunt-banner": "~0.2.3",
+        "grunt-usemin": "~0.2.2",
+        "grunt-express": "~1.4.0",
+        "grunt-open": "~0.2.3",
+        "grunt-gh-pages": "~0.9.1"
     }
 }

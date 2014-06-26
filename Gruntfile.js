@@ -219,6 +219,34 @@ module.exports = function(grunt) {
                 files: ["<%= less.build.src %>"],
                 tasks: ["less"]
             }
+        },
+
+        "gh-pages": {
+            options: {
+                base: "<%= PROD_PATH %>",
+                message: "Automated commit by Grunt deploy script"
+            },
+
+            master: {
+                options: {
+                    branch: "master"
+                },
+                src: ["**"]
+            },
+
+            "gh-pages": {
+                options: {
+                    branch: "gh-pages"
+                },
+                src: ["**"]
+            },
+
+            "test": {
+                options: {
+                    branch: "deploy-test"
+                },
+                src: ["**"]
+            }
         }
     });
 
@@ -243,11 +271,13 @@ module.exports = function(grunt) {
      *    is specified, then dev will be used.
      */
 
-    var target = grunt.option("target") || "dev";
+    var target = grunt.option("target") || "dev",
+        branch = grunt.option("branch") || "test";
 
     grunt.registerTask("default", ["build:" + target, "server:" + target]);
     grunt.registerTask("build", ["build:" + target]);
     grunt.registerTask("server", ["server:" + target]);
+    grunt.registerTask("deploy", ["build:prod", "gh-pages:" + branch]);
 
     grunt.registerTask("server:dev", [
         "express:dev",
