@@ -15,12 +15,12 @@
         "grunt-contrib-less": "~0.11.3",
         "grunt-contrib-concat": "~0.4.0",
         "grunt-contrib-uglify": "~0.5.0",
-        "grunt-contrib-htmlmin": "*",
+        "grunt-contrib-htmlmin": "~0.3.0",
         "grunt-contrib-cssmin": "~0.10.0",
         "grunt-htmlhint": "~0.4.0",
         "grunt-banner": "~0.2.3",
-        "grunt-usemin": "~0.2.2",
-        "grunt-express": "~1.4.0",
+        "grunt-usemin": "~2.2.0",
+        "grunt-express": "=1.2.1",
         "grunt-open": "~0.2.3",
         "grunt-gh-pages": "~0.9.1"
     }
