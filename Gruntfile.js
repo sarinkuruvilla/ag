@@ -15,7 +15,7 @@ module.exports = function(grunt) {
             ' * Project: <%= pkg.name %>',
             ' * Version: <%= pkg.version %> (<%= grunt.template.today("yyyy-mm-dd") %>)',
             ' * Author: <%= pkg.author %>',
-            ' * Copyright (c) <%= grunt.template.today("yyyy") %>',
+            ' * Copyright (c) <%= grunt.template.today("yyyy") %> Artist Growth, LLC',
             ' */'
         ],
 
@@ -48,16 +48,19 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            dev: ["<%= DEV_PATH %>/style.css"],
+            dev: ["<%= DEV_PATH %>/app.css"],
             prod: ["<%= PROD_PATH %>"]
         },
 
         less: {
             build: {
-                src: "<%= DEV_PATH %>/css/style.less",
-                dest: "<%= DEV_PATH %>/css/style.css",
+                src: "<%= DEV_PATH %>/less/app.less",
+                dest: "<%= DEV_PATH %>/css/app.css",
                 options: {
-                    paths: ["<%= DEV_PATH %>/css"]
+                    paths: [
+                        "<%= DEV_PATH %>/bower_components/bootstrap/less",
+                        "<%= DEV_PATH %>/less"
+                    ]
                 }
             }
         },

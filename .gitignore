@@ -2,11 +2,12 @@
 npm-*.log
 
 # Dev Build Output
-src/css/style.css
+/src/css/style.css
+/src/css/app.css
 
 # Production Build Output
 .tmp
-dist/*
+/dist/*
 
 # OSX Cruft
 .DS_Store
