@@ -9,7 +9,6 @@
 
     <!-- build:css css/app.min.css -->
         <link rel="stylesheet" href="css/app.css"/>
-        <link rel="stylesheet" href="bower_components/bigvideo.js/css/bigvideo.css"/>
     <!-- endbuild -->
 
     <!--[if lt IE 8]>
@@ -26,246 +25,139 @@
     </div>
 </div>
 
-<div id="page1"
-     data-video="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f"
-     data-video-no-audio="http://player.vimeo.com/external/95467484.hd.mp4?s=9be9a5267835af977360c94f415999c7"
-     data-video-mobile-streaming="http://player.vimeo.com/external/95467484.m3u8?p=high,standard,mobile&s=95bbb4b217ebeb8b1db34d83be26d6bb">
+<div class="wrapper">
+    <section id="page1">
 
-    <div class="container header-container">
-        <div class="row">
-            <header>
-                <img src="images/logo-white.png" id="main-logo" width="225" height="60"/>
+        <video autoplay loop poster="images/loscolognes-bv-screengrab.jpg" id="bgvid">
+            <!-- <source src="polina.webm" type="video/webm"> -->
+            <source src="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f" type="video/mp4"></source>
+        </video>
+        <!-- data-video="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f"
+        data-video-no-audio="http://player.vimeo.com/external/95467484.hd.mp4?s=9be9a5267835af977360c94f415999c7"
+        data-video-mobile-streaming="http://player.vimeo.com/external/95467484.m3u8?p=high,standard,mobile&s=95bbb4b217ebeb8b1db34d83be26d6bb" -->
+        <div class="container header-container">
+            <div class="row">
+                <header>
+                    <img src="images/logo-white.png" id="main-logo" width="225" height="60"/>
 
-                <div class="main-nav col-md-4 pull-right">
-                    <ul>
-                        <li><a href="//artistgrowth.com/accounts/login/?next=/gateway/">LOGIN</a></li>
-                        <li><a href="//artistgrowth.com/accounts/signup/">SIGNUP</a></li>
-                    </ul>
-                </div>
-                <div id="closeBtn">+</div>
-            </header>
+                    <div class="main-nav col-md-4 pull-right">
+                        <ul>
+                            <li><a href="//artistgrowth.com/accounts/login/?next=/gateway/">LOGIN</a></li>
+                            <li><a href="//artistgrowth.com/accounts/signup/">SIGNUP</a></li>
+                        </ul>
+                    </div>
+                    <div id="closeBtn">+</div>
+                </header>
 
-            <div id="playBtn"></div>
+                <div id="playBtn"></div>
 
-            <div class="content-text col-xs-10 col-md-8 col-lg-4 pull-right">We help artists<br/>make their art their career</div>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-    <img id="screenGrab" src="images/loscolognes-bv-screengrab.jpg" class="big-image"/>
-
-</div>
-<!-- /.page1 -->
-
-<div id="page2">
-    <svg width="100%" height="33" viewbox="0 0 400 33" preserveaspectratio="none" class="chevron-before" version="1.1">
-        <polygon points="0,0 200,32 400,0 400,32 0,33" style="fill:#d0d0d0;"/>
-    </svg>
-
-    <h1>But building a career isn't easy</h1>
-
-    <h2>We understand that</h2>
-
-    <div class="artist-questions hidden-xs hidden-sm" data-0="top:30%;" data-top="top: 80%;" data-center-bottom="opacity:1;" data--300-top-bottom="opacity:0;">How much did I sell last week?</div>
-    <div class="artist-questions hidden-xs hidden-sm" data-0="left:10%;top:35%;" data-100-top="left:10%;top: 80%;" data-center-bottom="opacity:1;" data--300-top-bottom="opacity:0;">Who gets a share of
-        the cuts?
-    </div>
-</div>
-<!-- /.page2 -->
-
-<div id="page3">
-
-    <svg width="100%" height="33" viewbox="0 0 400 33" preserveaspectratio="none" class="chevron-before" version="1.1">
-        <polygon points="0,0 200,32 400,0 400,32 0,33" style="fill:#000000;"/>
-    </svg>
-    <div class="overflow-container" data-top-top="">
-        <h1 data-anchor-target="#page3"
-            data-bottom-top="opacity:0;"
-            data-center-top="opacity:1;position:absolute;"
-            data-top-top="opacity:1;position:fixed;"
-            data--5-top-top=""
-            data-bottom-bottom="opacity:1;"
-            data-300-top-bottom="opacity:0;">FINDING INVESTORS MEANS KNOWING THE NUMBERS</h1>
-
-        <p data-anchor-target="#page3"
-           data-bottom-top=""
-           data--100-center-top="position:absolute;"
-           data-top-top="opacity:0;position:fixed;"
-           data--50-top-top="opacity:1;"
-           data-500-center="left:5%;"
-           data-center="left:-150%"
-           data-bottom-bottom=""
-           data-top-bottom="">You’ve got great music, but now you need a way to showcase your talent. Artist Growth organizes your data into a portfolio, helping you
-            attract the attention needed for career advancement. </p>
-
-        <figure class="circle"
-                id="you-circle"
-                data-anchor-target="#page3"
-                data-bottom-top=""
-                data--100-center-top="position:absolute;left:10%;"
-                data-top-top="position:fixed;left:10%;"
-                data--100-top-top="opacity:1;"
-                data-500-center="left:10%;"
-                data-center="left:-150%"
-                data-bottom-bottom=""
-                data-top-bottom="">YOU
-        </figure>
-
-        <div class="mobile-connector visible-xs visible-sm"></div>
-
-        <img id="knob"
-             class="hidden-xs hidden-sm"
-             data-anchor-target="#page3"
-             data-bottom-top=""
-             data--100-center-top="position:absolute;"
-             data-top-top="position:fixed;"
-             data--100-top-top=""
-             data-500-center="left:50%;"
-             data-center="left:-50%"
-             data-bottom-bottom=""
-             data-top-bottom=""
-             src="images/knob/A_knob-render_2_00000.jpg"/>
-
-        <img class="mobile-knob visible-xs visible-sm" src="images/knob/A_knob-render_2_00060.jpg"/>
-
-        <div id="data-description"
-             data-anchor-target="#page3"
-             data-bottom-top=""
-             data--100-center-top="position:absolute;left:120%;"
-             data-top-top="position:fixed;left:120%;"
-             data--100-top-top="opacity:1;"
-             data-500-center="left:120%;"
-             data-center="left:9%"
-             data-bottom-bottom="opacity:1;"
-             data-300-top-bottom="opacity:0;"
-             data-top-bottom="">
-            Music industry investors are the people who watch your numbers, come to your shows, and take note of your fan base. They can be the difference between where you are and where you want to
-            be. Presenting your business professionally will show you're worth an investment, and Artist Growth can help bridge the gap between you and your potential investors.
-        </div>
-
-        <div id="graph-sphere"
-             data-anchor-target="#page3"
-             data-bottom-top=""
-             data--100-center-top="position:absolute;left:150%;"
-             data-top-top="position:fixed;left:150%;"
-             data--100-top-top="opacity:1;"
-             data-500-center="left:150%;"
-             data-center="left:39%"
-             data-bottom-bottom="opacity:1;"
-             data-300-top-bottom="opacity:0;"
-             data-top-bottom="">
-            <img src="images/data-sphere.png" border="0"/>
-        </div>
-
-        <div id="graph-column-bar"
-             data-anchor-target="#page3"
-             data-bottom-top=""
-             data--100-center-top="position:absolute;right:-60%;"
-             data-top-top="position:fixed;right:-60%;"
-             data--100-top-top="opacity:1;"
-             data-500-center="right:-60%;"
-             data-center="right:10%"
-             data-bottom-bottom="opacity:1;"
-             data-300-top-bottom="opacity:0;"
-             data-top-bottom="">
-            <div id="column-description">Whether you’re dusting off that old guitar or selling out shows on the road, Artist Growth is the executive in your pocket. We help you manage your inventory,
-                making it presentable to potential investors, while keeping track of your contacts, tour routing, finances, and merchandise. Artist Growth lets you organize your career so that you can
-                focus on what's most important: your art.
+                <div class="content-text col-xs-10 col-md-8 col-lg-4 pull-right">We help artists<br/>make their art their career</div>
             </div>
-            <div class="cube-container">
-                <div id="you-pointer" data-anchor-target=".cube-main" data-center="top:5%;" data-400-bottom-bottom="top:84%;"><img src="images/data-column-you.png"></div>
-                <div class="cube-main skew">
-                    <div class="first"></div>
-                    <div class="second"></div>
-                    <div class="third"></div>
-                    <div class="fourth"></div>
-                </div>
-                <!-- /.cube-main -->
-                <div class="cube-main">
-                    <div class="first">Enterprise Artists</div>
-                    <div class="second">Professional Indies</div>
-                    <div class="third">Early Stage Indies</div>
-                    <div class="fourth">Hobbyist</div>
-                </div>
-                <!-- /.cube-main -->
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- <img id="screenGrab" src="images/loscolognes-bv-screengrab.jpg" class="big-image"/> -->
+
+    </section>
+    <!-- /.page1 -->
+</div> <!-- /.wrapper -->
+
+<div class="short-wrapper">
+    <section id="page2">
+        <div class="container header-container">
+            <div class="row">
+                <h1>But building a career isn't easy</h1>
+                <h2>We understand that</h2>
             </div>
-            <!-- /.cube-container -->
+            <!-- /.row -->
         </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page2 -->
+</div> <!-- /.wrapper -->
 
-    </div>
-    <!-- /.overflow-container -->
-</div>
-<!-- /.page3 -->
-
-<div id="page4">
-    <svg width="100%" height="33" viewbox="0 0 400 33" preserveaspectratio="none" class="chevron-before" version="1.1">
-        <polygon points="0,0 200,32 400,0 400,32 0,33"/>
-    </svg>
-    <div class="overflow-container">
-        <h1 data-anchor-target="#page4"
-            data-smooth-scrolling="off"
-            data-bottom-top="margin-top:-150px;opacity:0;"
-            data--200-center-top="margin-top:0;opacity:1;position:absolute;"
-            data-top-top="position:fixed;"
-            data-500-center="left:10%;"
-            data-center="left:-150%;">WE CAN HELP WITH THAT</h1>
-
-        <div id="description-paragraph"
-             data-anchor-target="#page4"
-             data-smooth-scrolling="off"
-             data-bottom-top="left:10%;opacity:0;"
-             data--200-center-top="left:10%;opacity:1;position:absolute;"
-             data-top-top="position:fixed;"
-             data-500-center="left:10%;"
-             data-center="left:-150%;">
-            <p>Let Artist Growth represent you in the business world so you can keep doing what you do best. Making music. Making a career.</p>
+<div class="short-wrapper">
+    <section id="page3">
+        <div id="background1-parallax">
+            
         </div>
-        <div id="iphone-screen"
-             data-anchor-target="#page4"
-             data-smooth-scrolling="off"
-             data-bottom-top="left:200%;"
-             data--200-center-top="left:54%;position:absolute;"
-             data-top-top="position:fixed;"
-             data-500-center="left:54%;"
-             data-center="left:-105%;"><img src="images/iphone-app.png" border="0"/></div>
-        <div id="macbook-screen"
-             data-anchor-target="#page4"
-             data-smooth-scrolling="off"
-             data-bottom-top="left:200%;"
-             data--275-center-top="left:55%;position:absolute;"
-             data-top-top="position:fixed;"
-             data-500-center="left:55%;"
-             data-center="left:-13%;"
-             data-100-bottom="top:250px;"
-             data-top-bottom="top:-529px;"><img src="images/macbook.png" border="0"/></div>
-        <div id="graph" data-anchor-target="#page4"
-             data-smooth-scrolling="off"
-             data--275-center-top="left:150%;position:absolute;"
-             data-top-top="position:fixed;"
-             data-500-center="left:150%;"
-             data-center="left:60%;"
-             data-100-bottom="top:250px;"
-             data-top-bottom="top:-529px;"><img src="images/ag-graph.jpg" border="0"/></div>
-        <div id="graph-description"
-             data-anchor-target="#page4"
-             data-smooth-scrolling="off"
-             data--275-center-top="left:150%;position:absolute;"
-             data-top-top="position:fixed;"
-             data-500-center="left:150%;"
-             data-center="left:60%;"
-             data-100-bottom="top:565px;"
-             data-top-bottom="top:-229px;"><p>Our tools and reports will bridge the gap between you and a major management company or record label, some of majors that
-            using our services are listed below.</p></div>
+        <div class="container header-container">
+            <div class="row">
+                <div class="floating-text">this is a test</div>
+                <h1>SEE HOW ARTIST GROWTH KEEPS YOU ORGANIZED</h1>
+                
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page3 -->
+</div> <!-- /.wrapper -->
 
-    </div>
-</div>
-<!-- /.page4 -->
+<div class="short-wrapper">
+    <section id="page4">
+        <div class="container header-container">
+            <div class="row">
+                <h1>But building a career isn't easy</h1>
+                
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page4 -->
+</div> <!-- /.wrapper -->
 
-<div id="page5">
-    <svg width="100%" height="33" viewbox="0 0 400 33" preserveaspectratio="none" class="chevron-before" version="1.1">
-        <polygon points="0,0 200,32 400,0 400,32 0,33"/>
-    </svg>
+<div class="short-wrapper">
+    <section id="page5">
+        <div id="background2-parallax">
+            
+        </div>
+        <div class="container header-container">
+            <div class="row">
+                <h1>But building a career isn't easy</h1>
+                
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page4 -->
+</div> <!-- /.wrapper -->
 
+<div class="short-wrapper">
+    <section id="page6">
+        <div class="container header-container">
+            <div class="row">
+                <h1>But building a career isn't easy</h1>
+                
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page6 -->
+</div> <!-- /.wrapper -->
+
+<div class="short-wrapper">
+    <section id="page7">
+        <div id="background3-parallax">
+            
+        </div>
+        <div class="container header-container">
+            <div class="row">
+                <h1>But building a career isn't easy</h1>
+                
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page7 -->
+</div> <!-- /.wrapper -->
+
+<section id="page8">
     <h1>A FEW OF THE ARTISTS ALREADY USING ARTIST GROWTH</h1>
 
     <div id="artists-paragraph">
@@ -302,56 +194,46 @@
         <div class="artist-photo"><h1>Joan Osborne</h1><img src="images/artists/Joan_Osborne.jpg" class="rollzoom"/></div>
     </div>
     <!-- /.our-artists -->
-</div>
-<!-- /.page5 -->
+</section>
+<!-- /.page8 -->
 
-<div id="page6">
-    <svg width="100%" height="33" viewbox="0 0 400 33" preserveaspectratio="none" class="chevron-before" version="1.1">
-        <polygon points="0,0 200,32 400,0 400,32 0,33"/>
-    </svg>
-    <div id="main-image"><img src="images/page6.jpg" border="0"/></div>
-    <h1>LIVE THE DREAM. MAKE A LIVING</h1>
-
-    <div id="pricing">
-        <a href="//artistgrowth.com/accounts/signup/">
-            <div class="product-details">
-                <div class="product-name">Starter "EP"</div>
-                <hr/>
-                <div class="product-price"><sup>$</sup>0<span class="price-interval">/MO</span></div>
-                <div class="product-description"><span class="highlight">GOOD FOR:</span><br/>Indies just getting started with their career</div>
-                <ul>
-                    <li>event listing</li>
-                    <li>financial tracking</li>
-                    <li>team management</li>
-                    <li>live performance royalties</li>
-                    <li>task assignments</li>
-                    <li>bands in town sync</li>
-                </ul>
+<div class="short-wrapper">
+    <section id="page9">
+        <div id="background4-parallax">
+            
+        </div>
+        <div class="container header-container">
+            <div class="row">
+                <h1>But building a career isn't easy</h1>
+                
             </div>
-        </a>
-        <a href="//artistgrowth.com/accounts/signup/">
-            <div class="product-details">
-                <img src="images/most-popular.png" class="most-popular"/>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.page9 -->
+</div> <!-- /.wrapper -->
 
-                <div class="product-name">Full "LP"</div>
-                <hr/>
-                <div class="product-price"><sup>$</sup>10<span class="price-interval">/MO</span></div>
-                <div class="product-description"><span class="highlight">GOOD FOR:</span><br/>Indies just getting started with their career</div>
-                <ul>
-                    <li class="starter-included">All Starter "EP" FEATURES +</li>
-                    <li>multiple calendar views</li>
-                    <li>day sheet view</li>
-                    <li>data report center</li>
-                    <li>Tour merch inventory + settlement</li>
 
-                </ul>
-            </div>
-        </a>
+<section id="page10">
+    <div class="container header-container">
+        <div class="row">
+            <h1>LIVE THE DREAM. MAKE A LIVING</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis enim sapien, tempus ut lacinia et, faucibus nec tortor. Nam facilisis ullamcorper rhoncus. Duis molestie mauris nec nunc pretium, vitae iaculis massa porttitor. Nam feugiat sit amet metus aliquam hendrerit. Pellentesque laoreet porta leo eget consectetur. Cras nulla est, faucibus auctor ultricies id, suscipit non lorem. Aliquam ullamcorper sodales imperdiet. Sed bibendum, mauris sit amet rhoncus mattis, est tellus iaculis dui, id pharetra leo velit a ante. Aenean bibendum ante egestas turpis dignissim, non mollis velit pretium.</p>
 
+            <p>Etiam nibh felis, ornare ac felis eu, faucibus sagittis lacus. Proin aliquet eros risus, vitae condimentum elit interdum ut. Nam nec gravida elit. Proin vitae leo non elit vestibulum convallis. Morbi ac sapien dui. Donec ac libero magna. Etiam quis tempor felis. Suspendisse nec tortor tortor. Mauris sodales ipsum vel cursus aliquam.</p>
+
+            <p>Etiam a ante malesuada, viverra justo at, congue nisi. Aenean turpis massa, accumsan id lectus eget, egestas consequat nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id velit ut tortor malesuada fringilla. Phasellus pulvinar leo augue, eu vestibulum ipsum vulputate et. Vivamus iaculis neque turpis, a imperdiet sapien dictum et. Phasellus porta id leo a elementum. Fusce egestas sodales est. Maecenas mattis, metus sit amet vulputate dictum, dui mi vestibulum dolor, eget mattis mi felis quis diam. Morbi vitae dignissim nulla. Donec ligula leo, bibendum id odio non, placerat consectetur est. Integer sed commodo odio, in rhoncus massa. In aliquet, ipsum sed congue mattis, massa quam sodales dolor, nec auctor ligula turpis non quam.</p>
+
+            <p>Vestibulum quis erat ultrices, varius tellus non, pretium massa. Mauris blandit nulla eu interdum interdum. Cras urna nisi, elementum et convallis ut, egestas eu nunc. Sed vel sagittis mauris. Phasellus massa dolor, accumsan sed mauris ac, posuere malesuada quam. Donec porta feugiat turpis, a auctor nisi ultrices a. Morbi sagittis libero velit, vitae posuere dolor mollis et.</p>
+
+            <p>Donec et nulla viverra, adipiscing sapien ut, auctor orci. Vestibulum quis nunc neque. Aenean in porta mauris, a posuere magna. In arcu velit, rhoncus in felis quis, commodo posuere lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In ligula augue, viverra eget orci et, vulputate eleifend felis. Fusce lacinia elementum turpis, ut lobortis nisl tempus in. Integer ac pellentesque turpis. Cras nulla urna, eleifend sit amet semper vitae, aliquam sit amet velit. Pellentesque euismod odio massa, eget placerat turpis fermentum quis. Sed erat mauris, volutpat nec tellus a, tristique elementum orci. Donec mollis pharetra tellus, ut pulvinar lorem accumsan nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris molestie gravida enim ac facilisis. Cras venenatis fringilla pharetra.</p>
+        </div>
+        <!-- /.row -->
     </div>
-    <!-- /#pricing -->
-</div>
-<!-- /.page5 -->
+    <!-- /.container-fluid -->
+</section>
+<!-- /.page10 -->
 
 <footer>
     <div class="container header-container">
@@ -403,12 +285,13 @@
     <script src="bower_components/eventie/eventie.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <script src="bower_components/video.js/dist/video-js/video.dev.js"></script>
-    <script src="bower_components/bigvideo.js/lib/bigvideo.js"></script>
+    
     <script src="bower_components/isotope/dist/isotope.pkgd.js"></script>
     <script src="js/vendor/jquery.flexverticalcenter.js"></script>
     <script src="bower_components/jsplumb/dist/js/jquery.jsPlumb-1.6.2.js"></script>
     <script src="bower_components/jquery.transit/jquery.transit.js"></script>
-    <script src="bower_components/skrollr/src/skrollr.js"></script>
+    <script src="bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="bower_components/ScrollMagic/js/jquery.scrollmagic.js"></script>
 
     <script src="js/jquery.videoScrubber.js"></script>
     <script src="js/ag.marketing.js"></script>
