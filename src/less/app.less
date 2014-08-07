@@ -146,6 +146,7 @@ body {
     font-size: 1em;
 }
 
+
 /*---- TYPOGRAPHY ----*/
 h1, h2, h3 {
   font-family: @headings-font-family;
@@ -162,7 +163,7 @@ h4, h5 {
 }
 p {
   font-family: @headings-font-family;
-  font-size: 1.1em;
+  font-size: .85em;
   line-height: 1.6em;
 }
 
@@ -191,10 +192,11 @@ p {
 
 .parallax {
   position:absolute;
-  z-index: -2;
+  z-index: 0;
   width:100%;
   height:100%;
   opacity: .7;
+  background-position: no-repeat;
 }
 
 /*---- CUSTOM BUTTONS ----*/
@@ -297,8 +299,11 @@ header {
 
 //Image Slide - Unorganized Artist ( First Parallax Image )
 #page3 {
+    .slide-content {
+      right: 100px;
+    }
     #background1-parallax {
-        background: url('../images/backgrounds/kitchen-demo.jpg') no-repeat;
+        background-image: url('../images/backgrounds/kitchen-demo.jpg');
         .background-cover();
         &:after {
             position:absolute;
@@ -313,9 +318,8 @@ header {
 }
 //White Slide 2
 #page4 {
-    background: url('../images/slideGraphic-report-tickets.png') no-repeat;
+    background: url('../images/slideGraphic-report-tickets.png') no-repeat 0px 102px;
     .background-cover();
-    background-position: 0px 102px;
     .slide-content {
       top: 80px;
       right: 100px;
@@ -324,25 +328,19 @@ header {
 //Image Slide - Girl Guitar ( Second Parallax Image )
 #page5 {
     #background2-parallax {
-        background: url('../images/backgrounds/girl-guitar.jpg');
-        background-size: 100% auto;
+        background-image: url('../images/backgrounds/girl-guitar.jpg');
+        .background-cover();
     }
 }
 //White Slide 3
 #page6 {
-  background: url('../images/slideGraphic-report-revenue.png') no-repeat;
-  background-position: 100px -230px;
+  background: url('../images/slideGraphic-report-revenue.png') no-repeat 100px -230px;
 }
 
 //Image Slide - Plane ( Third Parallax Image )
 #page7 {
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
-    width: 100%;
-    z-index: 1;
-    background: @darkColor top center no-repeat;
     #background3-parallax {
-        background: url('../images/backgrounds/artist-success.jpg');
+        background-image: url('../images/backgrounds/artist-success.jpg');
         .background-cover();
     }
 }
