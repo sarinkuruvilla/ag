@@ -56,9 +56,11 @@
             .setTween(new TimelineMax().add([
                 TweenMax.fromTo("#page9 #background4-parallax", 1, {backgroundPosition: "0 80%", ease: Linear.easeNone}, {backgroundPosition: "0 -50%", ease: Linear.easeNone})
             ]));
-            
+        
+        createArtistGrid();
 
         $("#cover").fadeOut();
+
     });
 
 
@@ -107,6 +109,7 @@
         );
 
         $(".artist-photo").click(function() {
+            console.log('testing');
             var currentPhoto = $(this);
 
             $(".artist-photo").not(currentPhoto).each(function() {
