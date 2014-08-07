@@ -159,7 +159,7 @@ h4, h5 {
   text-transform: uppercase;
 }
 .subhead {
-  .subhead();
+  .subhead(13px);
 }
 p {
   font-family: @headings-font-family;
@@ -219,66 +219,36 @@ p {
 
 /*---- HEADER ----*/
 header {
-	margin-top: 20px;
-
-	#main-logo {
-		margin-left: 15px;
-		width: 113px;
-		height: 30px;
-	}
-}
-
-.big-image {
-	height: 100%;
-	left: -100%;
-	min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    float: left;
-}
-
-//#playBtn {
-//	cursor: pointer;
-//	height: 50px;
-//	width: 50px;
-//	display: block;
-//	background: url(../images/play-icon.png);
-//	background-size: 100% 200%;
-//	position: absolute;
-//	left: 50%;
-//	top: 50%;
-//	margin: -25px 0 0 -25px;
-//}
-
-.main-nav {
-	text-align: right;
-	padding: 4px 24px 0 0;
-    .subhead ();
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-
-        li {
-            display: inline;
-            margin-left: 10px;
-
-            a {
-                color: @lightColor;
-                font-size: 0.7em;
-
-                &:hover {
-                    color: @lightColor;
-                    text-decoration: none;
-                }
-            }
-        }
+    color: black;
+    .navbar-brand {
+      width: 200px;
+      height: 50px;
+      overflow: hidden;
+      background: transparent url("../images/logo-white.png") no-repeat;
+      background-size: 80%;
     }
+    .navbar {
+      z-index: 1000;
+      text-align: right;
+      padding: 4px 24px 0 0;
+      background-color: rgba(0,0,0,0.4);
+      .subhead(.7em);
+      margin-bottom: -55px;
+      border: 0;
+      a {
+          color: black;
+          &:hover {
+              cursor: pointer;
+              color: @gray-light;
+              text-decoration: none;
+          }
+      }
+  }
 }
+
+
+
+
 //Intro Slide
 #page1 {
   position: absolute;
@@ -291,6 +261,18 @@ header {
   .slide-content {
     width: 70%;
   }
+  //#playBtn {
+  //	cursor: pointer;
+  //	height: 50px;
+  //	width: 50px;
+  //	display: block;
+  //	background: url(../images/play-icon.png);
+  //	background-size: 100% 200%;
+  //	position: absolute;
+  //	left: 50%;
+  //	top: 50%;
+  //	margin: -25px 0 0 -25px;
+  //}
 }
 //White Slide 1
 #page2 {
@@ -557,8 +539,6 @@ footer {
 /* Small devices (tablets, 768px and up) */
 @media (min-width: @screen-sm-min) {
 	header {
-		margin-top: 40px;
-
 		#main-logo {
 			margin-top: -8px;
 			width: 169px;
@@ -718,8 +698,6 @@ footer {
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: @screen-md-min) {
 	header {
-		margin-top: 40px;
-
 		#main-logo {
 			width: 225px;
 			height: 60px;
@@ -901,10 +879,6 @@ footer {
 			}
 		}
 	}
-}
-
-.header-container {
-	height: 100%;
 }
 
 .overflow-container {
