@@ -146,7 +146,6 @@ body {
     font-size: 1em;
 }
 
-
 /*---- TYPOGRAPHY ----*/
 h1, h2, h3 {
   font-family: @headings-font-family;
@@ -154,13 +153,16 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
   line-height: 1em;
 }
+
 h4, h5 {
   font-family: @subheadings-font-family;
   text-transform: uppercase;
 }
+
 .subhead {
   .subhead(13px);
 }
+
 p {
   font-family: @headings-font-family;
   font-size: .85em;
@@ -178,14 +180,19 @@ p {
 .slide {
   border-bottom: 1px solid @gray-lighter;
 }
-.white {
+
+.white-slide {
     position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
     width: 100%;
     z-index: 1;
-
+    /*fill parent*/
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
-.image {
+
+.image-slide {
   color: white;
   background-color: black;
 }
@@ -203,6 +210,7 @@ p {
 .btn-inverse {
   .btn-inverse();
 }
+
 .btn {
   padding: 12px 15px;
   letter-spacing: 0.07em;
@@ -211,8 +219,6 @@ p {
     margin-right: 5px;
   }
 }
-
-
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
@@ -246,13 +252,9 @@ header {
   }
 }
 
-
-
-
+/*---- SPECIFIC SLIDE STYLES ----*/
 //Intro Slide
 #page1 {
-  position: absolute;
-  top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
   background: url('../images/Amelia_Cinemagraph.gif') no-repeat;
   .background-cover();
   h1 {
@@ -261,19 +263,8 @@ header {
   .slide-content {
     width: 70%;
   }
-  //#playBtn {
-  //	cursor: pointer;
-  //	height: 50px;
-  //	width: 50px;
-  //	display: block;
-  //	background: url(../images/play-icon.png);
-  //	background-size: 100% 200%;
-  //	position: absolute;
-  //	left: 50%;
-  //	top: 50%;
-  //	margin: -25px 0 0 -25px;
-  //}
 }
+
 //White Slide 1
 #page2 {
     background-size: auto 72%;
@@ -298,6 +289,7 @@ header {
         }
     }
 }
+
 //White Slide 2
 #page4 {
     background: url('../images/slideGraphic-report-tickets.png') no-repeat 0px 102px;
@@ -307,6 +299,7 @@ header {
       right: 100px;
     }
 }
+
 //Image Slide - Girl Guitar ( Second Parallax Image )
 #page5 {
     #background2-parallax {
@@ -314,6 +307,7 @@ header {
         .background-cover();
     }
 }
+
 //White Slide 3
 #page6 {
   background: url('../images/slideGraphic-report-revenue.png') no-repeat 100px -230px;
@@ -326,6 +320,7 @@ header {
         .background-cover();
     }
 }
+
 //White Slide 4 - Artists Grid
 #page8 {
     #artists-paragraph {
@@ -339,7 +334,6 @@ header {
         list-style: none;
         zoom: 0.7;
         width: 85%;
-
         li {
             display: block;
             float: left;
@@ -349,62 +343,49 @@ header {
             background-size: 617px 130px;
             font-size: 0;
         }
-
         #vector {
             width: 122px;
             background-position: 0px 65px;
         }
-
         #vector:hover {
             background-position: 0 0;
         }
-
         #redlight {
             width: 133px;
             background-position: -122px 65px;
         }
-
         #redlight:hover {
             background-position: -122px 0;
         }
-
         #collective {
             width: 88px;
             background-position: -255px 65px;
         }
-
         #collective:hover {
             background-position: -255px 0;
         }
-
         #spalding {
             width: 86px;
             background-position: -343px 65px;
         }
-
         #spalding:hover {
             background-position: -343px 0;
         }
-
         #bmi {
             width: 98px;
             background-position: -429px 65px;
         }
-
         #bmi:hover {
             background-position: -429px 0;
         }
-
         #iamother {
             width: 92px;
             background-position: -527px 65px;
         }
-
         #iamother:hover {
             background-position: -527px 0;
         }
     }
-
     .our-artists {
         margin: 230px auto 0 auto;
         .artist-photo {
@@ -413,7 +394,6 @@ header {
             float: left;
             display: block;
             overflow: hidden;
-
             h1 {
                 display: none;
                 color: @lightColor;
@@ -421,7 +401,6 @@ header {
                 font-size: 18px;
                 text-transform: uppercase;
             }
-
             img.rollzoom {
                 width: 100%;
                 height: 100%;
@@ -443,7 +422,6 @@ header {
                 }
             }
         }
-
         .gigante {
             width: 160px;
             height: 160px;
