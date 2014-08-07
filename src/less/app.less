@@ -129,6 +129,7 @@ a.symbol:before {
     font-size: 130%;
 }
 
+/*---- GENERAL ----*/
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -139,17 +140,18 @@ html,
 body {
     margin: 0;
     padding: 0;
-    color: #fff;
-    background: #eeeeee;
+    color: black;
+    background: #fff;
     font-weight: 300;
     font-size: 1em;
 }
 
+/*---- TYPOGRAPHY ----*/
 h1, h2, h3 {
   font-family: @headings-font-family;
   font-weight: normal;
-  font-weight: normal;
   letter-spacing: -0.02em;
+  line-height: 1em;
 }
 h4, h5 {
   font-family: @subheadings-font-family;
@@ -158,23 +160,62 @@ h4, h5 {
 .subhead {
   .subhead();
 }
-
 p {
   font-family: @headings-font-family;
-  font-size: 12px;
-  line-height: 1.4em;
+  font-size: 1.1em;
+  line-height: 1.6em;
 }
 
+
+/*---- SLIDES ----*/
+.slide-content {
+  width: 35%;
+  position: absolute;
+  bottom: 100px;
+}
+
+.slide {
+  border-bottom: 1px solid @gray-lighter;
+}
 .white {
-    background-color: @lightColor;
     position: absolute;
     top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
     width: 100%;
     z-index: 1;
-    color: black;
+
 }
+.image {
+  color: white;
+  background-color: black;
+}
+
+.parallax {
+  position:absolute;
+  z-index: -2;
+  width:100%;
+  height:100%;
+  opacity: .7;
+}
+
+/*---- CUSTOM BUTTONS ----*/
+.btn-inverse {
+  .btn-inverse();
+}
+.btn {
+  padding: 12px 15px;
+  letter-spacing: 0.07em;
+  i {
+    font-size: 17px;
+    margin-right: 5px;
+  }
+}
+
+
+
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
+
+/*---- HEADER ----*/
 header {
 	margin-top: 20px;
 
@@ -236,32 +277,29 @@ header {
         }
     }
 }
-
+//Intro Slide
 #page1 {
   position: absolute;
   top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
   background: url('../images/Amelia_Cinemagraph.gif') no-repeat;
   .background-cover();
+  h1 {
+    font-size: 3em;
+  }
+  .slide-content {
+    width: 70%;
+  }
 }
+//White Slide 1
 #page2 {
     background-size: auto 72%;
 }
 
+//Image Slide - Unorganized Artist ( First Parallax Image )
 #page3 {
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
-    width: 100%;
-    z-index: 1;
-    background: @darkColor top center no-repeat;
     #background1-parallax {
-        position:absolute;
-        z-index: -2;
-        width:100%;
-        height:100%;
-        background: url('../images/backgrounds/kitchen-demo.jpg');
-        opacity: .7;
+        background: url('../images/backgrounds/kitchen-demo.jpg') no-repeat;
         .background-cover();
-
         &:after {
             position:absolute;
             z-index: 2;
@@ -272,68 +310,43 @@ header {
             background-color: #000000;
         }
     }
-    .floating-text {
-        font-size: 2em;
-        position: absolute;
-    }
 }
-
+//White Slide 2
 #page4 {
-    background-image: url('../images/slideGraphic-report-tickets.png');
+    background: url('../images/slideGraphic-report-tickets.png') no-repeat;
     .background-cover();
-    background-position: 0px -50px;
-    svg {
-        fill: @lightColor;
-    }
-    #description-paragraph {
-        top: 90px;
-        color: @darkColor;
-        position: absolute;
-        padding: 0 8% 0 8%;
-        width: 100%;
-        text-align: justify;
-        line-height: 1.8em;
-        font-size: 0.8em;
+    background-position: 0px 102px;
+    .slide-content {
+      top: 80px;
+      right: 100px;
     }
 }
-
+//Image Slide - Girl Guitar ( Second Parallax Image )
 #page5 {
-    background: @darkColor top center no-repeat;
     #background2-parallax {
-        position:absolute;
-        z-index: -2;
-        width:100%;
-        height:100%;
-        opacity: .7;
         background: url('../images/backgrounds/girl-guitar.jpg');
         background-size: 100% auto;
     }
 }
-
+//White Slide 3
 #page6 {
-  background-image: url('../images/slideGraphic-report-revenue.png');
-  .background-cover();
-  background-position: -60% 0%;
+  background: url('../images/slideGraphic-report-revenue.png') no-repeat;
+  background-position: 100px -230px;
 }
 
+//Image Slide - Plane ( Third Parallax Image )
 #page7 {
     position: absolute;
     top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
     width: 100%;
     z-index: 1;
     background: @darkColor top center no-repeat;
-
     #background3-parallax {
-        position:absolute;
-        z-index: -2;
-        width:100%;
-        height:100%;
-        opacity: .7;
         background: url('../images/backgrounds/artist-success.jpg');
-        background-size: 100% auto;
+        .background-cover();
     }
 }
-
+//White Slide 4 - Artists Grid
 #page8 {
     #artists-paragraph {
         color: @darkColor;
@@ -342,7 +355,6 @@ header {
         line-height: 1.8em;
         font-size: 0.8em;
     }
-
     ul#clients-logos {
         list-style: none;
         zoom: 0.7;
@@ -415,7 +427,6 @@ header {
 
     .our-artists {
         margin: 230px auto 0 auto;
-
         .artist-photo {
             width: 80px;
             height: 80px;
@@ -475,49 +486,22 @@ header {
     }
 }
 
+//Image Slide - Artist Profile Los Colognes ( Fourth Parallax Image )
 #page9 {
-    position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0; /*fill parent*/
-    width: 100%;
-    z-index: 1;
-    background: @darkColor top center no-repeat;
     #background4-parallax {
-        position:absolute;
-        z-index: -2;
-        width:100%;
-        height:100%;
-        opacity: .7;
         background: url('../images/backgrounds/los-colognes.jpg');
-        background-size: 100% auto;
+        .background-cover();
     }
-    h1 {
-        position: absolute;
-        top: 20px;
-        left: 5%;
-        right: 5%;
-        width: 90%;
-    }
-    p {
-        color: @lightColor;
-        font-size: 0.6em;
-        line-height: 1.8em;
-        padding: 0 10% 0 10%;
-        top: 115px;
-        left: 1%;
-        right: 1%;
-        width: 98%;
-        position: absolute;
-    }
-
 }
 
+//White Slide 5 - Pricing
 #page10 {
     
 }
 
 
 
-/* FOOTER */
+/*---- FOOTER ----*/
 footer {
 	background: @darkColor;
     position: relative;
@@ -967,7 +951,6 @@ footer {
         width: 100%;
         content: '';
     }
-
     #bgvid {
         position: absolute;
         min-width: 100%;
@@ -975,11 +958,9 @@ footer {
         width: auto; 
         height: auto; 
         z-index: -100;
-        background: url('../images/loscolognes-bv-screengrab.jpg') no-repeat;
-        background-size: cover;
-
+        background: url('../images/Amelia_Cinemagraph.gif') no-repeat;
+        .background-cover();
     }
-
 }
 
 .video-title {

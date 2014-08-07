@@ -100,7 +100,7 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
+@border-radius-base:        0px;
 @border-radius-large:       6px;
 @border-radius-small:       3px;
 
@@ -141,14 +141,15 @@
 //## For each of Bootstrap's buttons, define text, background and border color.
 
 @btn-font-weight:                normal;
+@btn-font-family:                @subheadings-font-family;
 
 @btn-default-color:              #333;
 @btn-default-bg:                 #fff;
 @btn-default-border:             #ccc;
 
 @btn-primary-color:              #fff;
-@btn-primary-bg:                 @brand-primary;
-@btn-primary-border:             darken(@btn-primary-bg, 5%);
+@btn-primary-bg:                 #000;
+@btn-primary-border:             @btn-primary-color;
 
 @btn-success-color:              #fff;
 @btn-success-bg:                 @brand-success;
@@ -167,6 +168,10 @@
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
 
 @btn-link-disabled-color:        @gray-light;
+
+@btn-primary-inverse-color:      black;
+@btn-primary-inverse-bg:         #fff;
+
 
 
 //== Forms
