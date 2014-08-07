@@ -192,6 +192,7 @@ p {
     position: absolute;
     width: 100%;
     z-index: 1;
+    padding: 30px 0;
     /*fill parent*/
     top: 0;
     bottom: 0;
@@ -233,6 +234,21 @@ p {
     font-size: 17px;
     margin-right: 5px;
   }
+}
+/*---- CUSTOM LISTS ----*/
+.list-lined {
+  .list-group();
+}
+
+.list-lined-item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  // Place the border on the list items and negative margin up for better styling
+  margin-bottom: -1px;
+  background-color: @list-group-bg;
+  border-top: 1px solid @list-group-border;
+  border-bottom: 1px solid @list-group-border;
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -469,14 +485,32 @@ header {
 
 //White Slide 5 - Pricing
 #page10 {
-    
+    .list-lined-item {
+      .subhead(10px);
+    }
+    .pricing-header {
+      text-align: center;
+    }
+    .price {
+      font-family: 'proxima_nova_rgbold';
+      line-height: 2em;
+      sup {
+        font-size: 0.45em;
+      }
+      .value {
+        font-size: 3.5em;
+      }
+    }
 }
 
 
 
 /*---- FOOTER ----*/
 footer {
-    .subhead(10px);
+//    .subhead(10px);
+    font-family: @headings-font-family;
+    font-size: .85em;
+    letter-spacing: -0.02em;
 	background: @gray-lighter;
     position: relative;
 	height: 300px;
@@ -489,7 +523,7 @@ footer {
       text-transform: none;
     }
     .address {
-		line-height: 20px;
+		line-height: 1.5em;
 		margin-bottom: 20px;
 	}
     a {
@@ -521,9 +555,7 @@ footer {
 	}
 	.copyright {
 		text-align: left;
-		width: auto;
-		position: absolute;
-		bottom: 20px;
+        .subhead(9px);
 	}
 }
 
