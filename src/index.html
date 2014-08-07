@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<div id="cover" >
+<div id="cover">
     <div id="cover-inner">
         <div id="cover-message">
             <h1></h1>
@@ -25,215 +25,214 @@
     </div>
 </div>
 
-<div class="wrapper">
-    <section id="page1">
+<header>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"></a>
+        </div>
+        <!-- Nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Signup</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+</header>
 
-        <video autoplay loop poster="images/loscolognes-bv-screengrab.jpg" id="bgvid">
-            <!-- <source src="polina.webm" type="video/webm"> -->
-            <source src="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f" type="video/mp4"></source>
-        </video>
+<!-- Intro Slide:  Cinemagraph of Musician -->
+<div class="wrapper">
+    <section id="page1" class="slide image-slide">
+        <!--<video autoplay loop poster="images/loscolognes-bv-screengrab.jpg" id="bgvid">-->
+            <!--&lt;!&ndash; <source src="polina.webm" type="video/webm"> &ndash;&gt;-->
+            <!--<source src="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f" type="video/mp4"></source>-->
+        <!--</video>-->
         <!-- data-video="http://player.vimeo.com/external/98324019.sd.mp4?s=7e8b6858534151449148b329f2473f5f"
         data-video-no-audio="http://player.vimeo.com/external/95467484.hd.mp4?s=9be9a5267835af977360c94f415999c7"
         data-video-mobile-streaming="http://player.vimeo.com/external/95467484.m3u8?p=high,standard,mobile&s=95bbb4b217ebeb8b1db34d83be26d6bb" -->
-        <div class="container header-container">
+        <div class="container">
             <div class="row">
-                <header>
-                    <img src="images/logo-white.png" id="main-logo" width="225" height="60"/>
-
-                    <div class="main-nav col-md-4 pull-right">
-                        <ul>
-                            <li><a href="//artistgrowth.com/accounts/login/?next=/gateway/">LOGIN</a></li>
-                            <li><a href="//artistgrowth.com/accounts/signup/">SIGNUP</a></li>
-                        </ul>
-                    </div>
-                    <div id="closeBtn">+</div>
-                </header>
-
-                <div id="playBtn"></div>
-
-                <div class="content-text col-xs-10 col-md-8 col-lg-4 pull-right">We help artists<br/>make their art their career</div>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-
-        <!-- <img id="screenGrab" src="images/loscolognes-bv-screengrab.jpg" class="big-image"/> -->
-
-    </section>
-    <!-- /.page1 -->
+                <div class="slide-content">
+                    <h1>We help artists<br/>make their art their career</h1>
+                    <button class="btn btn-primary btn-inverse"><i class="icon-glyphicons facetime_video"></i> Take A Tour</button>
+                </div>
+                <div id="closeBtn">+</div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page1 -->
 </div> <!-- /.wrapper -->
 
+
+<!-- White Slide:  Infographic -->
 <div class="short-wrapper">
-    <section id="page2">
+    <section id="page2" class="slide white-slide">
         <div class="container header-container">
             <div class="row">
-                <h1>But building a career isn't easy</h1>
-                <h2>We understand that</h2>
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page2 -->
+                <div class="slide-content">
+                    <h1>Organizing a business is hard.</h1>
+                    <h5 class="subhead">Artist Growth streamlines the work</h5>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page2 -->
 </div> <!-- /.wrapper -->
 
+
+<!-- Image Slide:  Unorganized Musician -->
 <div class="short-wrapper">
-    <section id="page3">
-        <div id="background1-parallax">
-            
-        </div>
+    <section id="page3" class="slide image-slide">
+        <div id="background1-parallax" class="parallax"></div>
         <div class="container header-container">
             <div class="row">
-                <div class="floating-text">this is a test</div>
-                <h1>SEE HOW ARTIST GROWTH KEEPS YOU ORGANIZED</h1>
-                
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page3 -->
+                <div class="slide-content text-right">
+                    <h5 class="subhead">See how Artist Growth keeps you organized.</h5>
+                    <button class="btn btn-primary btn-inverse"><i class="icon-glyphicons show_thumbnails"></i> View Gallery</button>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page3 -->
 </div> <!-- /.wrapper -->
 
+
+<!-- White Slide:  Reports - Tickets Graph -->
 <div class="short-wrapper">
-    <section id="page4">
+    <section id="page4" class="slide white-slide">
         <div class="container header-container">
             <div class="row">
-                <h1>But building a career isn't easy</h1>
-                
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page4 -->
+                <div class="slide-content">
+                    <h1>Every business needs investment.</h1>
+                    <h5 class="subhead">Our tools help market you to potential investors</h5>
+                    <p>Our tools help market you to potential investors. Our tools help market you to potential investors. Our tools help market you to potential investors.</p>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page4 -->
 </div> <!-- /.wrapper -->
 
+
+<!-- Image Slide:  Girl Guitar -->
 <div class="short-wrapper">
-    <section id="page5">
-        <div id="background2-parallax">
-            
-        </div>
+    <section id="page5" class="slide image-slide">
+        <div id="background2-parallax" class="parallax"></div>
         <div class="container header-container">
             <div class="row">
-                <h1>But building a career isn't easy</h1>
-                
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page4 -->
+                <div class="slide-content">
+                    <h5 class="subhead">Dummy title for slide</h5>
+                    <button class="btn btn-primary btn-inverse">Action here.</button>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page5 -->
 </div> <!-- /.wrapper -->
 
+
+<!-- White Slide:  Reports - Contract Rev -->
 <div class="short-wrapper">
-    <section id="page6">
+    <section id="page6" class="slide white-slide">
         <div class="container header-container">
             <div class="row">
-                <h1>But building a career isn't easy</h1>
-                
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page6 -->
+                <div class="slide-content">
+                    <h1>Finding investors means knowing the numbers</h1>
+                    <h5 class="subhead">Our report center knows those.</h5>
+                    <p>Aliquam ullamcorper sodales imperdiet. Sed bibendum, mauris sit amet rhoncus mattis, est tellus iaculis dui,
+                id pharetra leo velit a ante. Aenean bibendum ante egestas turpis dignissim, non mollis velit pretium.</p>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page6 -->
 </div> <!-- /.wrapper -->
 
+
+<!-- Image Slide:  Plane -->
 <div class="short-wrapper">
-    <section id="page7">
-        <div id="background3-parallax">
-            
-        </div>
+    <section id="page7" class="slide image-slide">
+        <div id="background3-parallax" class="parallax"></div>
         <div class="container header-container">
             <div class="row">
-                <h1>But building a career isn't easy</h1>
-                
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page7 -->
+                <div class="slide-content">
+                    <h5 class="subhead">A dummy title for this slide here</h5>
+                    <button class="btn btn-primary btn-inverse"><i class="icon-glyphicons circle_ok"></i> Action here</button>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page7 -->
 </div> <!-- /.wrapper -->
 
-<section id="page8">
-    <h1>A FEW OF THE ARTISTS ALREADY USING ARTIST GROWTH</h1>
 
-    <div id="artists-paragraph">
-        <p>The Artist Growth platform is becoming an industry standard for artists worldwide.</p>
-    </div>
+<!-- White Slide:  Artists -->
+<div class="wrapper">
+    <section id="page8" class="slide white-slide">
+        <div class="slide-content text-center">
+            <h1>Then start dreaming big</h1>
+            <h5 class="subhead">Here are a few of the artists whose teams use Artist Growth.</h5>
+        </div>
 
-    <ul id="clients-logos" class="hidden-xs hidden-sm">
-        <li id="vector">Vector Management</li>
-        <li id="redlight">Redlight Management</li>
-        <li id="collective">The Collective</li>
-        <li id="spalding">Spalding Entertainment Group</li>
-        <li id="bmi">BMI</li>
-        <li id="iamother">i am OTHER</li>
-    </ul>
-    <div class="our-artists">
-        <div class="artist-photo other"><h1>PHARELL</h1><img src="images/artists/pharell.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>AMOS LEE</h1><img src="images/artists/Amos_Lee.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>The Fray</h1><img src="images/artists/The_Fray.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>KINGS OF LEON</h1><img src="images/artists/kings_of_leon.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>Gavin Degraw</h1><img src="images/artists/Gavin_Degraw.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>ONE REPUBLIC</h1><img src="images/artists/one_republic.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>KESHA</h1><img src="images/artists/Kesha.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>Kristin Chenowenth</h1><img src="images/artists/Kristin_Chenowenth.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>Rascal Flatts</h1><img src="images/artists/rascal_flats.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>Ryan Tedder</h1><img src="images/artists/Ryan_Tedder.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>Emmylou Harris</h1><img src="images/artists/Emmylou_Harris.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>ZZ Ward</h1><img src="images/artists/ZZ_Ward.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>Trisha Yearwood</h1><img src="images/artists/Trisha_Yearwood.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>The Wallflowers</h1><img src="images/artists/The_Wallflowers.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>Randy Travis</h1><img src="images/artists/Randy_Travis.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>Jake owen</h1><img src="images/artists/Jake_owen.jpg" class="rollzoom"/></div>
-        <div class="artist-photo sort" data-category="sort"><h1>Hank Williams Jr</h1><img src="images/artists/Hank_Williams_Jr.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>Lynyrd Skynyrd</h1><img src="images/artists/Lynyrd_Skynyrd.jpg" class="rollzoom"/></div>
-        <div class="artist-photo"><h1>Joan Osborne</h1><img src="images/artists/Joan_Osborne.jpg" class="rollzoom"/></div>
-    </div>
-    <!-- /.our-artists -->
-</section>
-<!-- /.page8 -->
+        <ul id="clients-logos" class="hidden-xs hidden-sm">
+            <li id="vector">Vector Management</li>
+            <li id="redlight">Redlight Management</li>
+            <li id="collective">The Collective</li>
+            <li id="spalding">Spalding Entertainment Group</li>
+            <li id="bmi">BMI</li>
+            <li id="iamother">i am OTHER</li>
+        </ul>
+        <div class="our-artists">
+            <div class="artist-photo other"><h1>Pharell</h1><img src="images/artists/pharell.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Amos Lee</h1><img src="images/artists/Amos_Lee.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>The Fray</h1><img src="images/artists/The_Fray.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Kings of Leon</h1><img src="images/artists/kings_of_leon.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>Gavin Degraw</h1><img src="images/artists/Gavin_Degraw.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>One Republic</h1><img src="images/artists/one_republic.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Ke$ha</h1><img src="images/artists/Kesha.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Kristin Chenoweth</h1><img src="images/artists/Kristin_Chenowenth.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>Rascal Flatts</h1><img src="images/artists/rascal_flats.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Ryan Tedder</h1><img src="images/artists/Ryan_Tedder.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>Emmylou Harris</h1><img src="images/artists/Emmylou_Harris.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>ZZ Ward</h1><img src="images/artists/ZZ_Ward.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>Trisha Yearwood</h1><img src="images/artists/Trisha_Yearwood.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>The Wallflowers</h1><img src="images/artists/The_Wallflowers.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Randy Travis</h1><img src="images/artists/Randy_Travis.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>Jake owen</h1><img src="images/artists/Jake_owen.jpg" class="rollzoom"/></div>
+            <div class="artist-photo sort" data-category="sort"><h1>Hank Williams Jr</h1><img src="images/artists/Hank_Williams_Jr.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Lynyrd Skynyrd</h1><img src="images/artists/Lynyrd_Skynyrd.jpg" class="rollzoom"/></div>
+            <div class="artist-photo"><h1>Joan Osborne</h1><img src="images/artists/Joan_Osborne.jpg" class="rollzoom"/></div>
+        </div><!-- /.our-artists -->
+    </section><!-- /#page8 -->
+</div>
 
+<!-- Image Slide: Los Colognes -->
 <div class="short-wrapper">
-    <section id="page9">
-        <div id="background4-parallax">
-            
-        </div>
+    <section id="page9" class="slide image-slide">
+        <div id="background4-parallax" class="parallax"></div>
         <div class="container header-container">
             <div class="row">
-                <h1>But building a career isn't easy</h1>
-                
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container-fluid -->
-    </section>
-    <!-- /.page9 -->
+                <div class="slide-content">
+                    <h5 class="subhead">Artist Profile: Los Colognes</h5>
+                    <button class="btn btn-primary btn-inverse"><i class="icon-glyphicons facetime_video"></i> Watch Video</button>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page9 -->
 </div> <!-- /.wrapper -->
 
-
-<section id="page10">
-    <div class="container header-container">
-        <div class="row">
-            <h1>LIVE THE DREAM. MAKE A LIVING</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis enim sapien, tempus ut lacinia et, faucibus nec tortor. Nam facilisis ullamcorper rhoncus. Duis molestie mauris nec nunc pretium, vitae iaculis massa porttitor. Nam feugiat sit amet metus aliquam hendrerit. Pellentesque laoreet porta leo eget consectetur. Cras nulla est, faucibus auctor ultricies id, suscipit non lorem. Aliquam ullamcorper sodales imperdiet. Sed bibendum, mauris sit amet rhoncus mattis, est tellus iaculis dui, id pharetra leo velit a ante. Aenean bibendum ante egestas turpis dignissim, non mollis velit pretium.</p>
-
-            <p>Etiam nibh felis, ornare ac felis eu, faucibus sagittis lacus. Proin aliquet eros risus, vitae condimentum elit interdum ut. Nam nec gravida elit. Proin vitae leo non elit vestibulum convallis. Morbi ac sapien dui. Donec ac libero magna. Etiam quis tempor felis. Suspendisse nec tortor tortor. Mauris sodales ipsum vel cursus aliquam.</p>
-
-            <p>Etiam a ante malesuada, viverra justo at, congue nisi. Aenean turpis massa, accumsan id lectus eget, egestas consequat nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id velit ut tortor malesuada fringilla. Phasellus pulvinar leo augue, eu vestibulum ipsum vulputate et. Vivamus iaculis neque turpis, a imperdiet sapien dictum et. Phasellus porta id leo a elementum. Fusce egestas sodales est. Maecenas mattis, metus sit amet vulputate dictum, dui mi vestibulum dolor, eget mattis mi felis quis diam. Morbi vitae dignissim nulla. Donec ligula leo, bibendum id odio non, placerat consectetur est. Integer sed commodo odio, in rhoncus massa. In aliquet, ipsum sed congue mattis, massa quam sodales dolor, nec auctor ligula turpis non quam.</p>
-
-            <p>Vestibulum quis erat ultrices, varius tellus non, pretium massa. Mauris blandit nulla eu interdum interdum. Cras urna nisi, elementum et convallis ut, egestas eu nunc. Sed vel sagittis mauris. Phasellus massa dolor, accumsan sed mauris ac, posuere malesuada quam. Donec porta feugiat turpis, a auctor nisi ultrices a. Morbi sagittis libero velit, vitae posuere dolor mollis et.</p>
-
-            <p>Donec et nulla viverra, adipiscing sapien ut, auctor orci. Vestibulum quis nunc neque. Aenean in porta mauris, a posuere magna. In arcu velit, rhoncus in felis quis, commodo posuere lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. In ligula augue, viverra eget orci et, vulputate eleifend felis. Fusce lacinia elementum turpis, ut lobortis nisl tempus in. Integer ac pellentesque turpis. Cras nulla urna, eleifend sit amet semper vitae, aliquam sit amet velit. Pellentesque euismod odio massa, eget placerat turpis fermentum quis. Sed erat mauris, volutpat nec tellus a, tristique elementum orci. Donec mollis pharetra tellus, ut pulvinar lorem accumsan nec. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris molestie gravida enim ac facilisis. Cras venenatis fringilla pharetra.</p>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
-</section>
-<!-- /.page10 -->
+<!-- White Slide:  Pricing -->
+<div class="wrapper">
+    <section id="page10" class="slide white-slide">
+        <div class="container header-container">
+            <div class="row">
+                <h1>Pricing and Plans</h1>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /#page10 -->
+</div>
 
 <footer>
     <div class="container header-container">
@@ -263,10 +262,8 @@
                 </ul>
             </div>
             <div class="copyright">© 2014 ARTIST GROWTH, LLC</div>
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container-fluid -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
 </footer>
 
 <script type="text/javascript" src="//use.typekit.net/vna1ywe.js"></script>
