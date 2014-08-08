@@ -228,12 +228,29 @@ p {
 }
 
 .btn {
-  padding: 12px 15px;
   letter-spacing: 0.07em;
+  .subhead(9px);
   i {
     font-size: 17px;
     margin-right: 5px;
   }
+}
+
+&.btn-social {
+  &.btn-lg {
+    border-radius: @border-radius-base;
+    &:first-child {
+      line-height: 25px;
+    }
+  }
+}
+
+.btn-lowercase {
+  font-family: @headings-font-family;
+  font-size: .9em;
+  font-weight: normal;
+  text-transform: capitalize;
+  letter-spacing: -0.02em;
 }
 
 a#scroll-button {
@@ -267,6 +284,150 @@ a#scroll-button {
   background-color: @list-group-bg;
   border-top: 1px solid @list-group-border;
   border-bottom: 1px solid @list-group-border;
+}
+
+/*---- MODAL STYLES ----*/
+.modal-dialog {
+  border: 0;
+}
+.modal-content {
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: 0;
+}
+.modal {
+   top: 100px;
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+}
+
+/*---- Custom Modal CSS3 Animation ----*/
+.modal {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+    .modal-dialog {
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-transform: rotateY(-70deg);
+      -moz-transform: rotateY(-70deg);
+      -ms-transform: rotateY(-70deg);
+      transform: rotateY(-70deg);
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      opacity: 0;
+  }
+  &.in {
+    .modal-dialog {
+      	-webkit-transform: rotateY(0deg);
+        -moz-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+  }
+}
+/* Effect 8: 3D flip horizontal */
+.md-effect-8.md-modal {
+	-webkit-perspective: 1300px;
+	-moz-perspective: 1300px;
+	perspective: 1300px;
+}
+
+.md-effect-8 .md-content {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: rotateY(-70deg);
+	-moz-transform: rotateY(-70deg);
+	-ms-transform: rotateY(-70deg);
+	transform: rotateY(-70deg);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	opacity: 0;
+}
+
+.md-show.md-effect-8 .md-content {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	opacity: 1;
+}
+
+
+/*---- Custom Creations ----*/
+.text-circle {
+      text-align: center;
+      border-radius: 50%;
+      .subhead(10px);
+  &.small {
+      width: 30px;
+      height: 30px;
+      padding: 8px;
+      font-size: 10px;
+        &.outlined {
+         border: 15px solid black;
+         padding: 8px 20px 20px 8px;
+      }
+  }
+  &.large {
+      width: 60px;
+      height: 60px;
+      padding: 21px;
+      font-size: 14px;
+  }
+  &.white {
+      background-color: white;
+      color: black;
+  }
+  &.black {
+      background-color: black;
+      color: white;
+  }
+  &.fancy {
+      font-family: "Bookman", Georgia, "Times New Roman", serif;
+      font-weight: light;
+      font-style: italic;
+      text-transform: none;
+  }
+}
+
+/*---- FORM STYLES ----*/
+.input-group-addon {
+  color: #bcbcbc;
+}
+
+.modal-form {
+  .modal-header {
+    border: 0;
+    padding-top: 10px;
+  }
+  .modal-content {
+    padding: 15px;
+  }
+  .modal-body {
+    margin: 0 -15px;
+    padding: 0;
+  }
+  form {
+    padding: 15px;
+    background-color: black;
+    margin-top: -15px;
+  }
+  .text-circle {
+    margin: 0 auto;
+  }
+  .connect {
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
 }
 
 /* Extra small devices (phones, less than 768px) */
