@@ -30,7 +30,7 @@
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_nav">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -39,19 +39,22 @@
           <a class="navbar-brand" href="#"></a>
         </div>
         <!-- Nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="main_nav">
           <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Signup</a></li>
+                <li><a data-toggle="modal" href="#login_modal" data-target="#login_modal">Login</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#signup_modal">Signup</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container -->
     </nav>
 </header>
 
+
+
 <a id="scroll-button">
     <i class="icon-glyphicons hand_down"></i>
 </a>
+
 <!-- Intro Slide:  Cinemagraph of Musician -->
 <div class="wrapper">
     <section id="page1" class="slide image-slide">
@@ -354,6 +357,98 @@
     </div><!-- /.container -->
 </footer>
 
+<!-- Login Modal -->
+<div class="modal modal-form" id="login_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title subhead text-center">Login</h4>
+      </div>
+          <div class="modal-body">
+            <div class="connect">
+                <a class="btn btn-lowercase btn-block btn-social btn-facebook btn-lg">
+                    <span class="symbol">&#xe227;</span> Sign in with Facebook
+                  </a>
+            </div>
+            <div class="text-circle small fancy white outlined">
+                <span>Or</span>
+            </div>
+            <form class="" name="login-form" method="post" action="">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons envelope"></i></span>
+                        <input type="email" class="form-control" name="email" placeholder="Email Address"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons keys"></i></span>
+                        <input type="password" class="form-control" name="password" placeholder="Password"/>
+                    </div>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-block btn-lowercase btn-custom btn-inverse">Login</button>
+            </form>
+          </div>
+    </div>
+  </div>
+</div><!-- /#login_modal -->
+
+<!-- Signup Modal -->
+<div class="modal modal-form" id="signup_modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title subhead text-center">Sign Up</h4>
+      </div>
+          <div class="modal-body">
+            <div class="connect">
+                <a class="btn btn-lowercase btn-block btn-social btn-facebook btn-lg">
+                    <span class="symbol">&#xe227;</span> Connect with Facebook
+                  </a>
+            </div>
+            <div class="text-circle small fancy white outlined">
+                <span>Or</span>
+            </div>
+            <form class="" name="login-form" method="post" action="">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons user"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="First Name"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons user"></i></span>
+                        <input type="text" class="form-control" name="email" placeholder="Last Name"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons envelope"></i></span>
+                        <input type="email" class="form-control" name="email" placeholder="Email Address"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons keys"></i></span>
+                        <input type="password" class="form-control" name="password" placeholder="Password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="icon-glyphicons keys"></i></span>
+                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"/>
+                    </div>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-block btn-lowercase btn-custom btn-inverse">Login</button>
+            </form>
+          </div>
+    </div>
+  </div>
+</div><!-- /#signup_modal -->
+
 <script type="text/javascript" src="//use.typekit.net/vna1ywe.js"></script>
 <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 
@@ -370,6 +465,7 @@
     <script src="bower_components/eventie/eventie.js"></script>
     <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <script src="bower_components/video.js/dist/video-js/video.dev.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     
     <script src="bower_components/isotope/dist/isotope.pkgd.js"></script>
     <script src="js/vendor/jquery.flexverticalcenter.js"></script>

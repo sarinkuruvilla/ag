@@ -101,10 +101,6 @@
         container.isotope("on", "layoutComplete",
             function(isoInstance, laidOutItems) {
                 console.debug("isotope:layoutComplete", isoInstance, laidOutItems);
-                var page7 = $("#page7"),
-                    page8 = $("#page8"),
-                    bottom = page5.position().top + page5.outerHeight(true);
-                page8.css({ top: bottom });
             }
         );
 
