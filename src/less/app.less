@@ -630,6 +630,7 @@ footer {
     font-weight: normal;
     color: black;
     padding: 30px 0 0 30px;
+    clear: both;
     h3, h4 {
         text-transform: none;
     }
@@ -673,15 +674,25 @@ footer {
 
 /*---- TEAM PAGE ----*/
 #team-content {
+    section {
+        position: relative;
+    }
     .section-header-image {
         color: white;
         background-color: black;
+        position: relative;
         .img-bg {
             background-repeat: no-repeat;
             .background-cover();
             opacity: 0.5;
             height: 350px;
             padding-top: 50px;
+        }
+        .container {
+            position: absolute;
+            bottom: 40px;
+            text-align: center;
+            width: 100%;
         }
     }
     #team {
@@ -708,17 +719,32 @@ footer {
     a.thumbnail {
         padding: 0;
         border: 0;
-        .headshot {
-            background-color: black;
-            border-radius: 50%;
-            width: 217px;
-            height: 217px;
-            overflow: hidden;
-        }
-        img {
-            border-radius: 50%;
+        background-color: black;
+        border-radius: 50%;
+        position: relative;
+//        .headshot {
+//            background-color: black;
+//            border-radius: 50%;
+//            width: 217px;
+//            height: 217px;
+//            overflow: hidden;
+//        }
+//        img {
+//            border-radius: 50%;
+//        }
+
+        .caption {
+            text-align: center;
+            color: white;
+            position: absolute;
+            bottom: 32%;
+            width: 100%;
+            display: none;
         }
         &:hover {
+            .caption {
+                display: block;
+            }
             img {
                 opacity: 0.3;
             }
