@@ -218,7 +218,7 @@ a#scroll-button {
 }
 
 .modal-content {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.75);
     color: white;
     border: 0;
     border-radius: 0;
@@ -342,7 +342,7 @@ a#scroll-button {
         padding: 15px;
     }
     .modal-body {
-        margin: 0 -15px;
+        margin: 0 -15px -15px;
         padding: 0;
     }
     form {
@@ -356,6 +356,14 @@ a#scroll-button {
     .connect {
         margin-bottom: 20px;
         padding: 0 15px;
+    }
+    .form-group {
+        input.form-control {
+            background-color: transparent;
+            border-color: #555;
+            .placeholder(#555);
+            color: white;
+        }
     }
 }
 
@@ -376,7 +384,7 @@ header {
         z-index: 1000;
         text-align: right;
         padding: 4px 24px 0 0;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(0, 0, 0, 0.75);
         .subhead(.7em);
         margin-bottom: -55px;
         border: 0;
@@ -659,6 +667,62 @@ footer {
     .copyright {
         text-align: left;
         .subhead(9px);
+    }
+}
+
+
+/*---- TEAM PAGE ----*/
+#team-content {
+    .section-header-image {
+        color: white;
+        background-color: black;
+        .img-bg {
+            background-repeat: no-repeat;
+            .background-cover();
+            opacity: 0.5;
+            height: 350px;
+            padding-top: 50px;
+        }
+    }
+    #team {
+        .section-header-image .img-bg {
+            background-image: url(../images/team-test.jpg);
+        }
+    }
+    #board-dirs {
+        .section-header-image .img-bg {
+
+        }
+    }
+    #board-advs {
+        .section-header-image .img-bg {
+
+        }
+    }
+}
+.headshots {
+    margin-top: @grid-gutter-width;
+    .row {
+        height: 217px;
+    }
+    a.thumbnail {
+        padding: 0;
+        border: 0;
+        .headshot {
+            background-color: black;
+            border-radius: 50%;
+            width: 217px;
+            height: 217px;
+            overflow: hidden;
+        }
+        img {
+            border-radius: 50%;
+        }
+        &:hover {
+            img {
+                opacity: 0.3;
+            }
+        }
     }
 }
 
