@@ -17,16 +17,19 @@
 </head>
 
 <body>
-<div id="cover">
-    <div id="cover-inner">
-        <div id="cover-message">
-            <h1></h1>
+    <a id="scroll-button">
+        <i class="icon-glyphicons down_arrow"></i>
+    </a>
+    <div id="cover">
+        <div id="cover-inner">
+            <div id="cover-message">
+                <h1></h1>
+            </div>
         </div>
     </div>
-</div>
 
-<header>
-    <nav class="navbar navbar-default" role="navigation">
+    <header>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -49,14 +52,8 @@
     </nav>
 </header>
 
-
-
-<a id="scroll-button">
-    <i class="icon-glyphicons hand_down"></i>
-</a>
-
-<!-- Intro Slide:  Cinemagraph of Musician -->
-<div class="wrapper">
+    <!-- Intro Slide:  Cinemagraph of Musician -->
+    <div class="wrapper">
     <section id="page1" class="slide image-slide">
         <!--<video autoplay loop poster="images/loscolognes-bv-screengrab.jpg" id="bgvid">-->
             <!--&lt;!&ndash; <source src="polina.webm" type="video/webm"> &ndash;&gt;-->
@@ -78,8 +75,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- White Slide:  Infographic -->
-<div class="short-wrapper">
+    <!-- White Slide:  Infographic -->
+    <div class="short-wrapper">
     <section id="page2" class="slide white-slide">
         <div class="container">
             <div class="row">
@@ -93,8 +90,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- Image Slide:  Unorganized Musician -->
-<div class="short-wrapper">
+    <!-- Image Slide:  Unorganized Musician -->
+    <div class="short-wrapper">
     <section id="page3" class="slide image-slide">
         <div id="background1-parallax" class="parallax">
             <div class="overlay"></div>
@@ -111,8 +108,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- White Slide:  Reports - Tickets Graph -->
-<div class="short-wrapper">
+    <!-- White Slide:  Reports - Tickets Graph -->
+    <div class="short-wrapper">
     <section id="page4" class="slide white-slide">
         <div class="container">
             <div class="row">
@@ -127,8 +124,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- Image Slide:  Girl Guitar -->
-<div class="short-wrapper">
+    <!-- Image Slide:  Girl Guitar -->
+    <div class="short-wrapper">
     <section id="page5" class="slide image-slide">
         <div id="background2-parallax" class="parallax">
             <div class="overlay"></div>
@@ -145,8 +142,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- White Slide:  Reports - Contract Rev -->
-<div class="short-wrapper">
+    <!-- White Slide:  Reports - Contract Rev -->
+    <div class="short-wrapper">
     <section id="page6" class="slide white-slide">
         <div class="container">
             <div class="row">
@@ -162,8 +159,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- Image Slide:  Plane -->
-<div class="short-wrapper">
+    <!-- Image Slide:  Plane -->
+    <div class="short-wrapper">
     <section id="page7" class="slide image-slide">
         <div id="background3-parallax" class="parallax">
             <div class="overlay"></div>
@@ -180,9 +177,8 @@
 </div> <!-- /.wrapper -->
 
 
-<!-- White Slide:  Artists -->
-
-<section id="page8" class="slide">
+    <!-- White Slide:  Artists -->
+    <section id="page8" class="slide">
     <div class="text-center">
         <h1>Then start dreaming big</h1>
         <h5 class="subhead">Here are a few of the artists whose teams use Artist Growth.</h5>
@@ -220,8 +216,8 @@
 </section><!-- /#page8 -->
 
 
-<!-- Image Slide: Los Colognes -->
-<div class="short-wrapper">
+    <!-- Image Slide: Los Colognes -->
+    <div class="short-wrapper">
     <section id="page9" class="slide image-slide">
         <div id="background4-parallax" class="parallax">
             <div class="overlay"></div>
@@ -237,8 +233,8 @@
     </section><!-- /#page9 -->
 </div> <!-- /.wrapper -->
 
-<!-- White Slide:  Pricing -->
-<div class="short-wrapper">
+    <!-- White Slide:  Pricing -->
+    <div class="short-wrapper">
     <section id="page10" class="slide white-slide">
         <div class="container">
             <div class="row">
@@ -291,7 +287,7 @@
     </section><!-- /#page10 -->
 </div>
 
-<footer>
+    <footer>
     <div class="container">
         <div class="row">
             <div class="col-sm-9">
@@ -357,8 +353,8 @@
     </div><!-- /.container -->
 </footer>
 
-<!-- Login Modal -->
-<div class="modal modal-form" id="login_modal" tabindex="-1" role="dialog">
+    <!-- Login Modal -->
+    <div class="modal modal-form" id="login_modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -394,8 +390,8 @@
   </div>
 </div><!-- /#login_modal -->
 
-<!-- Signup Modal -->
-<div class="modal modal-form" id="signup_modal" tabindex="-1" role="dialog">
+    <!-- Signup Modal -->
+    <div class="modal modal-form" id="signup_modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -449,13 +445,15 @@
   </div>
 </div><!-- /#signup_modal -->
 
-<script type="text/javascript" src="//use.typekit.net/vna1ywe.js"></script>
-<script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
-<!-- build:js js/app.min.js -->
+    <!-- INCLUDE JAVASCRIPT -->
+    <script type="text/javascript" src="//use.typekit.net/vna1ywe.js"></script>
+    <script type="text/javascript">try { Typekit.load(); } catch (e) { }</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- build:js js/app.min.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <script src="bower_components/jquery-ui/ui/jquery.ui.core.js"></script>
     <script src="bower_components/jquery-ui/ui/jquery.ui.widget.js"></script>
