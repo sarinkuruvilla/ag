@@ -6,7 +6,8 @@ module.exports = function(grunt) {
 
 
         DEV_PATH: "src",
-        GRUNT_BUILD_PATH: ".grunt/build",
+        TEMP_PATH: ".grunt",
+        BUILD_PATH: "<%= TEMP_PATH %>/build",
         PROD_PATH: "dist",
 
         /**
@@ -37,7 +38,7 @@ module.exports = function(grunt) {
                     "head-script-disabled": true,
                     "style-disabled": true
                 },
-                src: ["<%= GRUNT_BUILD_PATH %>/index.html"]
+                src: ["<%= BUILD_PATH %>/index.html"]
             }
         },
 
@@ -57,7 +58,7 @@ module.exports = function(grunt) {
         less: {
             build: {
                 src: "<%= DEV_PATH %>/less/app.less",
-                dest: "<%= GRUNT_BUILD_PATH %>/css/app.css",
+                dest: "<%= BUILD_PATH %>/css/app.css",
                 options: {
                     paths: [
                         "<%= DEV_PATH %>/bower_components/bootstrap/less",
@@ -77,6 +78,7 @@ module.exports = function(grunt) {
                     banner: "<%= banner.join('\\n') %>",
                     linebreak: true
                 },
+
                 files: {
                     src: [
                         "<%= PROD_PATH %>/js/app.min.js",
@@ -91,8 +93,9 @@ module.exports = function(grunt) {
          * found in the target HTML files.
          */
         useminPrepare: {
-            html: ["<%= GRUNT_BUILD_PATH %>/**/*.html"],
+            html: ["<%= BUILD_PATH %>/**/*.html"],
             options: {
+                root: "<%= BUILD_PATH %>",
                 dest: "<%= PROD_PATH %>"
             }
         },
@@ -126,10 +129,10 @@ module.exports = function(grunt) {
 
         bower: {
             dev: {
-                dest: '<%= GRUNT_BUILD_PATH %>/js/vendor',
+                dest: "<%= BUILD_PATH %>/js/vendor",
                 options: {
                     packageSpecific: {
-                        'jquery-ui': {
+                        "jquery-ui": {
                             files: [
                                 "ui/jquery.ui.core.js",
                                 "ui/jquery.ui.widget.js",
@@ -137,27 +140,27 @@ module.exports = function(grunt) {
                                 "ui/jquery.ui.slider.js"
                             ]
                         },
-                        'video.js': {
+                        "video.js": {
                             files: [
                                 "dist/video-js/video.dev.js"
                             ]
                         },
-                        'isotope': {
+                        "isotope": {
                             files: [
                                 "dist/isotope.pkgd.js"
                             ]
                         },
-                        'jsplumb': {
+                        "jsplumb": {
                             files: [
                                 "dist/js/jquery.jsPlumb-1.6.2.js"
                             ]
                         },
-                        'gsap': {
+                        "gsap": {
                             files: [
                                 "src/uncompressed/TweenMax.js"
                             ]
                         },
-                        'ScrollMagic': {
+                        "ScrollMagic": {
                             files: [
                                 "js/jquery.scrollmagic.js"
                             ]
@@ -173,14 +176,11 @@ module.exports = function(grunt) {
         copy: {
             prod: {
                 files: [
-                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["fonts/**"], dest: "<%= PROD_PATH %>" },
-                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["images/**"], dest: "<%= PROD_PATH %>" },
-
-                    // jQuery needs to be copied as a CDN fallback.
-                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["js/vendor/jquery-1.11.1.min.js"], dest: "<%= PROD_PATH %>", filter: "isFile" },
-                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
-                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["team/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
-                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["CNAME"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["fonts/**"], dest: "<%= PROD_PATH %>" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["images/**"], dest: "<%= PROD_PATH %>" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["team/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["CNAME"], dest: "<%= PROD_PATH %>", filter: "isFile" },
                 ]
             }
         },
@@ -196,11 +196,9 @@ module.exports = function(grunt) {
                     collapseWhitespace: false
                 },
                 expand: true,
-                cwd: '<%= PROD_PATH %>',
-                src: '**/*.html',
-                dest: '<%= PROD_PATH %>'
-                // src: "<%= PROD_PATH %>/index.html",
-                // dest: "<%= PROD_PATH %>/index.html"
+                cwd: "<%= PROD_PATH %>",
+                src: "**/*.html",
+                dest: "<%= PROD_PATH %>"
             }
         },
 
@@ -209,12 +207,13 @@ module.exports = function(grunt) {
          */
         jekyll: {
             dev: {
-                src: '<%= DEV_PATH %>/_layouts',
-                dest: '<%= GRUNT_BUILD_PATH %>'
+                src: "<%= DEV_PATH %>/_layouts",
+                dest: "<%= BUILD_PATH %>"
             },
+
             prod: {
-                src: '<%= DEV_PATH %>/_layouts',
-                dest: '<%= PROD_PATH %>'
+                src: "<%= DEV_PATH %>/_layouts",
+                dest: "<%= BUILD_PATH %>"
             }
         },
 
@@ -226,10 +225,11 @@ module.exports = function(grunt) {
                 options: {
                     port: 8000,
                     hostname: "127.0.0.1",
-                    bases: ["<%= GRUNT_BUILD_PATH %>"],
+                    bases: ["<%= BUILD_PATH %>"],
                     livereload: true
                 }
             },
+
             prod: {
                 options: {
                     port: 8001,
@@ -248,6 +248,7 @@ module.exports = function(grunt) {
             dev: {
                 path: "http://<%= express.dev.options.hostname %>:<%= express.dev.options.port %>/"
             },
+
             prod: {
                 path: "http://<%= express.prod.options.hostname %>:<%= express.prod.options.port %>/"
             }
@@ -267,26 +268,33 @@ module.exports = function(grunt) {
                     livereload: true
                 },
                 files: [
-                    "<%= GRUNT_BUILD_PATH %>/index.html",
-                    "<%= GRUNT_BUILD_PATH %>/team/index.html",
-                    "<%= GRUNT_BUILD_PATH %>/css/*.css"
+                    "<%= BUILD_PATH %>/index.html",
+                    "<%= BUILD_PATH %>/team/index.html",
+                    "<%= BUILD_PATH %>/css/*.css"
                 ]
             },
+
             html: {
                 files: "<%= htmlhint.build.src %>",
                 tasks: ["htmlhint"]
             },
+
             jshint: {
                 files: "<%= jshint.build %>",
                 tasks: ["jshint"]
             },
+
             dev: {
                 files: ["<%= less.build.src %>"],
                 tasks: ["less"]
             },
+
             jekyll: {
-                files: ['<%= DEV_PATH %>/_layouts/*.html'],
-                tasks: ['jekyll:dev']
+                files: [
+                    "<%= DEV_PATH %>/_layouts/*.html",
+                    "<%= DEV_PATH %>/_includes/*.html",
+                ],
+                tasks: ["jekyll:dev"]
             }
         },
 
@@ -363,11 +371,8 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("build:prod", [
-        "jekyll",
+        "build:dev",
         "clean:prod",
-        "jshint",
-        "htmlhint",
-        "less",
         "copy",
         "useminPrepare",
         "concat",
