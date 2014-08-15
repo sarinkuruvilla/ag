@@ -51,7 +51,7 @@ module.exports = function(grunt) {
         },
 
         clean: {
-            dev: ["<%= DEV_PATH %>/app.css"],
+            dev: ["<%= DEV_PATH %>/app.css", "<%= BUILD_PATH %>"],
             prod: ["<%= PROD_PATH %>"]
         },
 
@@ -364,6 +364,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("build:dev", [
+        "clean:dev",
         "jekyll",
         "bower",
         "jshint",
