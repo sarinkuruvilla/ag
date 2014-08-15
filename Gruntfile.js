@@ -293,6 +293,7 @@ module.exports = function(grunt) {
                 files: [
                     "<%= DEV_PATH %>/_layouts/*.html",
                     "<%= DEV_PATH %>/_includes/*.html",
+                    "<%= DEV_PATH %>/*.html"
                 ],
                 tasks: ["jekyll:dev"]
             }
