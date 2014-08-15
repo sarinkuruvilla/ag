@@ -4,7 +4,9 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON("package.json"),
 
+
         DEV_PATH: "src",
+        GRUNT_BUILD_PATH: ".grunt/build",
         PROD_PATH: "dist",
 
         /**
@@ -35,7 +37,7 @@ module.exports = function(grunt) {
                     "head-script-disabled": true,
                     "style-disabled": true
                 },
-                src: ["<%= DEV_PATH %>/index.html"]
+                src: ["<%= GRUNT_BUILD_PATH %>/index.html"]
             }
         },
 
@@ -55,7 +57,7 @@ module.exports = function(grunt) {
         less: {
             build: {
                 src: "<%= DEV_PATH %>/less/app.less",
-                dest: "<%= DEV_PATH %>/css/app.css",
+                dest: "<%= GRUNT_BUILD_PATH %>/css/app.css",
                 options: {
                     paths: [
                         "<%= DEV_PATH %>/bower_components/bootstrap/less",
@@ -89,7 +91,7 @@ module.exports = function(grunt) {
          * found in the target HTML files.
          */
         useminPrepare: {
-            html: ["<%= DEV_PATH %>/index.html"],
+            html: ["<%= GRUNT_BUILD_PATH %>/**/*.html"],
             options: {
                 dest: "<%= PROD_PATH %>"
             }
@@ -100,7 +102,7 @@ module.exports = function(grunt) {
          * in comment blocks in the target HTML files.
          */
         usemin: {
-            html: ["<%= PROD_PATH %>/index.html"],
+            html: ["<%= PROD_PATH %>/**/*.html"],
             options: {
                 dirs: ["<%= PROD_PATH %>"]
             }
@@ -122,19 +124,63 @@ module.exports = function(grunt) {
             }
         },
 
+        bower: {
+            dev: {
+                dest: '<%= GRUNT_BUILD_PATH %>/js/vendor',
+                options: {
+                    packageSpecific: {
+                        'jquery-ui': {
+                            files: [
+                                "ui/jquery.ui.core.js",
+                                "ui/jquery.ui.widget.js",
+                                "ui/jquery.ui.mouse.js",
+                                "ui/jquery.ui.slider.js"
+                            ]
+                        },
+                        'video.js': {
+                            files: [
+                                "dist/video-js/video.dev.js"
+                            ]
+                        },
+                        'isotope': {
+                            files: [
+                                "dist/isotope.pkgd.js"
+                            ]
+                        },
+                        'jsplumb': {
+                            files: [
+                                "dist/js/jquery.jsPlumb-1.6.2.js"
+                            ]
+                        },
+                        'gsap': {
+                            files: [
+                                "src/uncompressed/TweenMax.js"
+                            ]
+                        },
+                        'ScrollMagic': {
+                            files: [
+                                "js/jquery.scrollmagic.js"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+
         /**
          * Copies files from the source folder to the production folder.
          */
         copy: {
             prod: {
                 files: [
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: ["fonts/**"], dest: "<%= PROD_PATH %>" },
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: ["images/**"], dest: "<%= PROD_PATH %>" },
+                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["fonts/**"], dest: "<%= PROD_PATH %>" },
+                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["images/**"], dest: "<%= PROD_PATH %>" },
 
                     // jQuery needs to be copied as a CDN fallback.
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: ["js/vendor/jquery-1.11.1.min.js"], dest: "<%= PROD_PATH %>", filter: "isFile" },
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: ["index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
-                    { expand: true, cwd: "<%= DEV_PATH %>", src: ["CNAME"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["js/vendor/jquery-1.11.1.min.js"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["team/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= GRUNT_BUILD_PATH %>", src: ["CNAME"], dest: "<%= PROD_PATH %>", filter: "isFile" },
                 ]
             }
         },
@@ -149,8 +195,26 @@ module.exports = function(grunt) {
                     removeComments: true,
                     collapseWhitespace: false
                 },
-                src: "<%= PROD_PATH %>/index.html",
-                dest: "<%= PROD_PATH %>/index.html"
+                expand: true,
+                cwd: '<%= PROD_PATH %>',
+                src: '**/*.html',
+                dest: '<%= PROD_PATH %>'
+                // src: "<%= PROD_PATH %>/index.html",
+                // dest: "<%= PROD_PATH %>/index.html"
+            }
+        },
+
+        /**
+         * Jekyll build.
+         */
+        jekyll: {
+            dev: {
+                src: '<%= DEV_PATH %>/_layouts',
+                dest: '<%= GRUNT_BUILD_PATH %>'
+            },
+            prod: {
+                src: '<%= DEV_PATH %>/_layouts',
+                dest: '<%= PROD_PATH %>'
             }
         },
 
@@ -162,7 +226,7 @@ module.exports = function(grunt) {
                 options: {
                     port: 8000,
                     hostname: "127.0.0.1",
-                    bases: ["<%= DEV_PATH %>"],
+                    bases: ["<%= GRUNT_BUILD_PATH %>"],
                     livereload: true
                 }
             },
@@ -203,8 +267,9 @@ module.exports = function(grunt) {
                     livereload: true
                 },
                 files: [
-                    "<%= DEV_PATH %>/index.html",
-                    "<%= DEV_PATH %>/css/**/*.css"
+                    "<%= GRUNT_BUILD_PATH %>/index.html",
+                    "<%= GRUNT_BUILD_PATH %>/team/index.html",
+                    "<%= GRUNT_BUILD_PATH %>/css/*.css"
                 ]
             },
             html: {
@@ -218,6 +283,10 @@ module.exports = function(grunt) {
             dev: {
                 files: ["<%= less.build.src %>"],
                 tasks: ["less"]
+            },
+            jekyll: {
+                files: ['<%= DEV_PATH %>/_layouts/*.html'],
+                tasks: ['jekyll:dev']
             }
         },
 
@@ -286,12 +355,15 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask("build:dev", [
+        "jekyll",
+        "bower",
         "jshint",
         "htmlhint",
         "less"
     ]);
 
     grunt.registerTask("build:prod", [
+        "jekyll",
         "clean:prod",
         "jshint",
         "htmlhint",

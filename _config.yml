@@ -1,0 +1,7 @@
+source: ./src
+destination: ./.grunt/build
+
+exclude: ["bower_components"]
+
+#Outputting
+permalink: pretty

@@ -59,7 +59,8 @@
         
         createArtistGrid();
 
-        $("#cover").fadeOut();
+        //$("#cover").fadeOut();
+        TweenLite.to("#cover", 0.2, {autoAlpha:0});
 
     });
 
