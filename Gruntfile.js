@@ -180,6 +180,11 @@ module.exports = function(grunt) {
                     { expand: true, cwd: "<%= BUILD_PATH %>", src: ["images/**"], dest: "<%= PROD_PATH %>" },
                     { expand: true, cwd: "<%= BUILD_PATH %>", src: ["index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
                     { expand: true, cwd: "<%= BUILD_PATH %>", src: ["team/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["benefits/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["jobs/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["press/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["privacy/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
+                    { expand: true, cwd: "<%= BUILD_PATH %>", src: ["terms/index.html"], dest: "<%= PROD_PATH %>", filter: "isFile" },
                     { expand: true, cwd: "<%= BUILD_PATH %>", src: ["CNAME"], dest: "<%= PROD_PATH %>", filter: "isFile" },
                 ]
             }
@@ -270,6 +275,11 @@ module.exports = function(grunt) {
                 files: [
                     "<%= BUILD_PATH %>/index.html",
                     "<%= BUILD_PATH %>/team/index.html",
+                    "<%= BUILD_PATH %>/benefits/index.html",
+                    "<%= BUILD_PATH %>/jobs/index.html",
+                    "<%= BUILD_PATH %>/press/index.html",
+                    "<%= BUILD_PATH %>/privacy/index.html",
+                    "<%= BUILD_PATH %>/terms/index.html",
                     "<%= BUILD_PATH %>/css/*.css"
                 ]
             },
