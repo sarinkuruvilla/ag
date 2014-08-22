@@ -171,9 +171,15 @@ module.exports = function(grunt) {
         },
 
         /**
-         * Copies files from the source folder to the production folder.
+         * Copies files from one place to another.
          */
         copy: {
+            dev: {
+                files: [
+                    { expand: true, cwd: "<%= DEV_PATH %>", src: ["js/*.js"], dest: "<%= BUILD_PATH %>" },
+                ]
+            },
+
             prod: {
                 files: [
                     { expand: true, cwd: "<%= BUILD_PATH %>", src: ["fonts/**"], dest: "<%= PROD_PATH %>" },
@@ -211,12 +217,7 @@ module.exports = function(grunt) {
          * Jekyll build.
          */
         jekyll: {
-            dev: {
-                src: "<%= DEV_PATH %>/_layouts",
-                dest: "<%= BUILD_PATH %>"
-            },
-
-            prod: {
+            build: {
                 src: "<%= DEV_PATH %>/_layouts",
                 dest: "<%= BUILD_PATH %>"
             }
@@ -280,7 +281,8 @@ module.exports = function(grunt) {
                     "<%= BUILD_PATH %>/press/index.html",
                     "<%= BUILD_PATH %>/privacy/index.html",
                     "<%= BUILD_PATH %>/terms/index.html",
-                    "<%= BUILD_PATH %>/css/*.css"
+                    "<%= BUILD_PATH %>/css/*.css",
+                    "<%= BUILD_PATH %>/js/**/*.js"
                 ]
             },
 
@@ -291,10 +293,10 @@ module.exports = function(grunt) {
 
             jshint: {
                 files: "<%= jshint.build %>",
-                tasks: ["jshint"]
+                tasks: ["jshint", "copy:dev"]
             },
 
-            dev: {
+            less: {
                 files: ["<%= less.build.src %>"],
                 tasks: ["less"]
             },
@@ -385,7 +387,7 @@ module.exports = function(grunt) {
     grunt.registerTask("build:prod", [
         "build:dev",
         "clean:prod",
-        "copy",
+        "copy:prod",
         "useminPrepare",
         "concat",
         "cssmin",
