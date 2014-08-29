@@ -84,7 +84,7 @@
             .setTween(new TimelineMax().add([
                 TweenMax.fromTo("#page9 #background4-parallax", 1, {backgroundPosition: "0 80%", ease: Linear.easeNone}, {backgroundPosition: "0 -50%", ease: Linear.easeNone})
             ]));
-        
+
         createArtistGrid();
 
         //$("#cover").fadeOut();
@@ -139,7 +139,7 @@
         });
     }
 
-    
+
 
     function createArtistGrid() {
         var container = $(".our-artists");
