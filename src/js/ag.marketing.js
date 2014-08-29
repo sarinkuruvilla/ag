@@ -7,6 +7,19 @@
     $(document).ready(function() {
         controller = new ScrollMagic();
 
+        // infographic icon
+        new ScrollScene({
+                triggerElement: "#handle",
+                duration: 300,
+                offset: -250
+            })
+            .addTo(controller)
+            .triggerHook("onCenter")
+            .setTween(new TimelineMax().add([
+                TweenMax.to("#handle", 3, {rotation: 180, transformOrigin:"109px 109px", ease: Linear.easeNone}),
+            ]));
+
+
         // parallax1
         new ScrollScene({
                 triggerElement: "#page3",
@@ -32,6 +45,21 @@
             .setTween(new TimelineMax().add([
                 TweenMax.fromTo("#page5 #background2-parallax", 1, {backgroundPosition: "0 80%", ease: Linear.easeNone}, {backgroundPosition: "0 -50%", ease: Linear.easeNone})
             ]));
+
+        // find investors
+        new ScrollScene({
+                triggerElement: "#page6",
+                duration: $(window).height() + 300,
+                offset: -250
+            })
+            .addTo(controller)
+            .triggerHook("onCenter")
+            .setTween(new TimelineMax().add([
+                TweenMax.fromTo("#page6", 1, {backgroundPosition: "450px -170px", ease: Linear.easeNone}, {backgroundPosition: "250px -800px", ease: Linear.easeNone})
+            ]));
+
+
+
 
         // parallax3
         new ScrollScene({
@@ -63,7 +91,33 @@
         TweenLite.to("#cover", 0.2, {autoAlpha:0});
 
     });
+    
 
+    function createInfoIcon() {
+        var canvas = document.getElementById("info-icons");
+        var context = canvas.getContext("2d");
+
+        // Variables store centre and radius of arc
+        var x = 250;
+        var y = 125;
+        var radius =80;
+
+        // define start and finish angle
+        var startAngle = 1 * Math.PI;
+        var endAngle = 0.5 * Math.PI;
+
+        // set the direction to anticlockwise
+        var counterClockwise = true;
+
+        context.beginPath();
+        context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        context.lineWidth =10;
+        context.lineCap="round";
+
+
+        context.strokeStyle = "#fa4b2a";
+        context.stroke();
+    }
 
     // Yeah, that's right.
     function createKnobScrubber() {
@@ -106,7 +160,6 @@
         );
 
         $(".artist-photo").click(function() {
-            console.log('testing');
             var currentPhoto = $(this);
 
             $(".artist-photo").not(currentPhoto).each(function() {
