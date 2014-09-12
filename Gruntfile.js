@@ -307,7 +307,7 @@ module.exports = function(grunt) {
                     "<%= DEV_PATH %>/_includes/*.html",
                     "<%= DEV_PATH %>/*.html"
                 ],
-                tasks: ["jekyll:dev"]
+                tasks: ["build:dev"]
             }
         },
 
