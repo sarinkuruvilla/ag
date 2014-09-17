@@ -30,5 +30,11 @@
   font-size: 10px;
 }
 
-
+.rotate(@degree) {
+  -webkit-transform: rotate(@degree); /* Safari and Chrome */
+  -moz-transform: rotate(@degree);   /* Firefox */
+  -ms-transform: rotate(@degree);   /* IE 9 */
+  -o-transform: rotate(@degree);   /* Opera */
+  transform: rotate(@degree);
+}
 

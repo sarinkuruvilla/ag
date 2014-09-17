@@ -449,11 +449,17 @@ header {
 
 //White Slide 2
 #page4 {
-    background: url('../images/slideGraphic-report-tickets.png') no-repeat 0px 102px;
+    padding: 0;
     .background-cover();
     .slide-content {
         top: 80px;
         right: 100px;
+    }
+    .graph {
+        position: position;
+        width: 100%;
+        z-index: -10;
+
     }
 }
 
@@ -722,6 +728,35 @@ footer {
     }
 }
 
+.profile-details {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    color: #ffffff;
+    background-size: cover;
+    background-position: top center;
+    .closeBtn {
+        font-family: Arial;
+        font-size: 3em;
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        .rotate(45deg);
+        cursor: pointer;
+    }
+    .bio-text {
+        margin-top: 45%;
+    }
+    
+}
+
+
 .headshots {
     margin-top: @grid-gutter-width;
     .row {
@@ -748,6 +783,10 @@ footer {
             img {
                 opacity: 0.3;
             }
+        }
+        p.bio {
+            visibility: hidden;
+            display: none;
         }
     }
 }
@@ -1164,11 +1203,8 @@ footer {
     line-height: 32px;
     cursor: pointer;
     display: none;
-
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
+    
+    .rotate(-45deg);
 
     /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
