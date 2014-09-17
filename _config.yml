@@ -5,3 +5,10 @@ exclude: ["bower_components"]
 
 #Outputting
 permalink: pretty
+
+defaults:
+    -
+        scope:
+            path: ""
+        values:
+            layout: "default"
