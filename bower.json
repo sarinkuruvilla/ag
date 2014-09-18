@@ -21,6 +21,8 @@
     "jquery.transit": "~0.9.11",
     "isotope": "~2.0.0",
     "ScrollMagic": "~1.0.8",
-    "gsap": "~1.13.1"
+    "gsap": "~1.13.1",
+    "spin.js": "~2.0.1",
+    "waitForImages": "~1.4.2"
   }
 }

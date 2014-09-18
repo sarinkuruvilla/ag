@@ -164,6 +164,17 @@ module.exports = function(grunt) {
                             files: [
                                 "js/jquery.scrollmagic.js"
                             ]
+                        },
+                        "spin.js": {
+                            files: [
+                                "spin.js",
+                                "jquery.spin.js"
+                            ]
+                        },
+                        "waitForImages": {
+                            files: [
+                                "dist/jquery.waitforimages.min.js"
+                            ]
                         }
                     }
                 }
