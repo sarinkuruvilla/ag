@@ -3,17 +3,6 @@
     $(document).ready(function() {
 
 
-        jQuery(document).on('keyup', function(evt) {
-            if (evt.keyCode == 27) {
-                $('.bigCircle').fadeOut("normal", function() {
-                    $(this).remove();
-                });
-                //TweenLite.to('.profile-details', 0.5, {autoAlpha:0});
-                $('body').css('overflow', 'auto');
-            }
-        });
-
-
         $.fn.spin.presets.flower = {
             lines: 11, // The number of lines to draw
             length: 0, // The length of each line
@@ -33,25 +22,32 @@
             left: '50%' // Left position relative to parent
         };
 
-        $(".thumbnail").click(function() {
+        $('.thumbnail').click(function() {
 
 
-            var p = $(this);
+            var p = $('body');
             var position = p.position();
             //        var imageUrl = $('img', this).attr('src');
             var addsqrt = Math.pow($(window).width(), 2) + Math.pow($(window).height(), 2);
             var diag = Math.sqrt(addsqrt);
             var ft = -(diag - $(window).height()) / 2;
             var fl = -(diag - $(window).width()) / 2;
-            $('.thumbnail-container ').append("<div class='bigCircle'></div>");
-            $('.closeBtn').css('top', '300px');
-            $('.closeBtn').css('left', '300px');
-            $('.closeBtn').hide();
-            $('.bigCircle').css('height', '150px');
-            $('.bigCircle').css('width', '150px');
+
+            var teamMemberName = $(this).children('.caption').children('h3').html();
+            var teamMemberTitle = $(this).children('.caption').children('p.subhead').html();
+            var teamMemberBio = $(this).children('.caption').children('p.bio').html();
+            var thumbWidth = $(this).width();
+            var thumbHeight = $(this).height();
+
+
+            $(this).parent().append('<div class=\'bigCircle\'></div>');
+            
+            $('.bigCircle').css('height', thumbHeight + 'px');
+            $('.bigCircle').css('width', thumbWidth + 'px');
             $('.bigCircle').css('position', 'absolute');
             $('.bigCircle').css('border-radius', '50%');
-            $('.bigCircle').css('margin', '15px');
+            $('.bigCircle').css('margin', '0');
+            $('.bigCircle').css('z-index', '99999');
             $('.bigCircle').css('top', position.top);
             $('.bigCircle').css('left', position.left);
             $('.bigCircle').css('background-size', 'cover');
@@ -66,8 +62,8 @@
                         width: diag,
                         height: diag,
                         margin: '0',
-                        top: ft,
-                        left: fl,
+                        top: $('body').scrollTop() + ft - $(this).parent().offset().top - parseInt($(this).parent().css('padding-top')) + parseInt($(this).parent().css('padding-bottom')),
+                        left: fl - $(this).parent().position().left - parseInt($(this).parent().css('padding-left')) + parseInt($(this).parent().css('padding-right')),
                         onComplete: circleOpen
                     });
                     // This *does* work
@@ -75,15 +71,32 @@
 
 
             function circleOpen() {
+
+                jQuery(document).on('keyup', function(evt) {
+                    if (evt.keyCode == 27) {
+                        $( '.closeBtn' ).trigger( 'click' );
+                    }
+                });
+
                 $('body').css('overflow', 'hidden');
-                $('.thumbnail-container ').append("<div class='bigContent'><div class='closeBtn'>+</div></div>");
-                $('.closeBtn').show();
+                $('.bigCircle').append('<div class=\'bigContent\'><div class=\'bigContentContainer\'><h3>' + teamMemberName + '</h3><p class=\'subhead\'>' + teamMemberTitle + '</p><p class=\'bio\'>' + teamMemberBio + '</p><div class=\'closeBtn\'>+</div></div></div>');
+                $('.closeBtn').css('top', '30px');
+                $('.closeBtn').css('right', '50px');
+                $('.bigContentContainer').css('width',$(window).width());
+                $('.bigContentContainer').css('height',$(window).height());
+                $('.bigContentContainer').css('position','absolute');
+                $('.bigContentContainer').css('z-index','5');
+                $('.bigContentContainer').css('top',($('.bigCircle').height() - $(window).height())/2 + 'px');
+                $('.bigContentContainer').css('left',($('.bigCircle').width() - $(window).width())/2 + 'px');
+
                 $('.closeBtn').click(function() {
-                    $(this).hide();
+
+                    $(this).parent().hide();
                     TweenLite.to('.bigCircle', 0.5, {
-                        width: p.width(),
-                        height: p.height(),
-                        margin: '15px',
+                        width: thumbWidth + 'px',
+                        height: thumbHeight + 'px',
+                        marginLeft: '15px',
+                        marginRight: '15px',
                         top: position.top,
                         left: position.left,
                         onComplete: circleClose
@@ -91,8 +104,9 @@
                     });
 
                     function circleClose() {
-                        $('.bigCircle').fadeOut("normal", function() {
-                            $('.closeBtn').remove();
+                        $('.bigCircle').fadeOut('normal', function() {
+                            $('body').css('overflow', 'auto');
+                            $('.bigContentContainer').remove();
                             $(this).remove();
                         });
                     }
